@@ -5,49 +5,43 @@ public class SoulCollectorA : MonoBehaviour
     [Header("Configuración de Recolección")]
     public float rangoRecoleccion = 2f;
     
-    private GameObject almaCercana = null;
-    
     void Update()
     {
-        // Buscar alma cercana constantemente
-        BuscarAlmaCercana();
-        
-        // Solo permitir recoger si hay un alma cercana y se presiona E
-        if (almaCercana != null && Input.GetKeyDown(KeyCode.E))
+        // Solo buscar y recoger cuando se presiona E
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            RecogerAlma();
+            RecogerAlmaCercana();
         }
     }
     
-    void BuscarAlmaCercana()
+    void RecogerAlmaCercana()
     {
-        // Buscar todas las almas cercanas
-        Collider[] soulsEnRango = Physics.OverlapSphere(transform.position, rangoRecoleccion);
+        // Buscar objetos cercanos
+        Collider[] objetosCercanos = Physics.OverlapSphere(transform.position, rangoRecoleccion);
         
-        almaCercana = null; // Resetear
-        float distanciaMinima = rangoRecoleccion;
+        GameObject almaMasCercana = null;
+        float distanciaMinima = rangoRecoleccion + 1f; // Iniciar con distancia mayor al rango
         
-        // Encontrar el alma más cercana
-        foreach (Collider col in soulsEnRango)
+        // Encontrar el alma más cercana dentro del rango
+        foreach (Collider col in objetosCercanos)
         {
             if (col.CompareTag("Soul"))
             {
                 float distancia = Vector3.Distance(transform.position, col.transform.position);
-                if (distancia <= distanciaMinima)
+                
+                // Solo considerar si está dentro del rango y es la más cercana
+                if (distancia <= rangoRecoleccion && distancia < distanciaMinima)
                 {
                     distanciaMinima = distancia;
-                    almaCercana = col.gameObject;
+                    almaMasCercana = col.gameObject;
                 }
             }
         }
-    }
-    
-    void RecogerAlma()
-    {
-        if (almaCercana != null)
+        
+        // Solo destruir si encontró un alma dentro del rango
+        if (almaMasCercana != null)
         {
-            Destroy(almaCercana);
-            almaCercana = null;
+            Destroy(almaMasCercana);
         }
     }
     
@@ -56,12 +50,5 @@ public class SoulCollectorA : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, rangoRecoleccion);
-        
-        // Mostrar cuál alma está cerca
-        if (almaCercana != null)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position, almaCercana.transform.position);
-        }
     }
 }
