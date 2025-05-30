@@ -19,12 +19,12 @@ public class SpanwManager : MonoBehaviour
     private int enemiesPerWave = 10;
     private bool isSpawningWave = false;
     private int enemiesSpawnedInWave = 0;
-    public bool alma = false;
     private int blockSize=5;
-
+    private SoulCollectorA soulCollectorA;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        soulCollectorA = FindFirstObjectByType<SoulCollectorA>();
         AddToPool(poolSize);
         StartCoroutine(SpawnRutine());
     }
@@ -33,7 +33,7 @@ public class SpanwManager : MonoBehaviour
     void Update()
     {
          // Si no hay enemigos vivos, pero aún faltan por aparecer, lanzamos otro bloque.
-        if (alma && isSpawningWave && EnemysEnable() == 0 && enemiesSpawnedInWave < enemiesPerWave)
+        if (soulCollectorA.alma && isSpawningWave && EnemysEnable() == 0 && enemiesSpawnedInWave < enemiesPerWave)
         {
             StartCoroutine(SpawnWave());
         }
@@ -87,7 +87,7 @@ public class SpanwManager : MonoBehaviour
     {
         while (true)
         {
-            if (!isSpawningWave && alma)
+            if (!isSpawningWave && soulCollectorA.alma)
             {
                 isSpawningWave = true;
                 enemiesSpawnedInWave = 0;//enemigos que estan en la escena
@@ -96,7 +96,7 @@ public class SpanwManager : MonoBehaviour
 
                 // Esperar hasta que se terminen todos los enemigos de la ola
                 yield return new WaitUntil(() => enemiesSpawnedInWave >= enemiesPerWave && EnemysEnable() == 0);
-
+                soulCollectorA.alma = false;//desativamos alma para que no ocurra otra ola
                 // Nueva ola
                 wave++;
                 enemiesPerWave *= 2;
@@ -116,7 +116,7 @@ public class SpanwManager : MonoBehaviour
         for (int i = 0; i < cantidadEnEsteBloque; i++)
         {
             //si alma es verdadera spanw enemigos
-            if (alma)
+            if (soulCollectorA.alma)
             {
                 SpawnEnemy();
                 enemiesSpawnedInWave++;//me cuenta los enemigos que an aparecido
