@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 8063a0476043b104e9bacda46371fce0
+AssetOrigin:
+  serializedVersion: 1
+  productId: 314464
+  packageName: VINTAGE LIVING ROOM 3D GAME PACK
+  packageVersion: 1.0
+  assetPath: Assets/Scenes/ZNS3D/Vintage Living Room Game Pack/Meshes/wall_corner_double.fbx
+  uploadId: 741990
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -16,8 +23,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -78,7 +83,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -107,10 +112,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 314464
-  packageName: VINTAGE LIVING ROOM 3D GAME PACK
-  packageVersion: 1.0
-  assetPath: Assets/Scenes/ZNS3D/Vintage Living Room Game Pack/Meshes/wall_corner_double.fbx
-  uploadId: 741990
