@@ -272,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangoRecoleccion: 2
   alma: 0
+  almaSpawnPointConsumida: {fileID: 0}
   AlmasAlmacenadas: []
 --- !u!1001 &137951872
 PrefabInstance:
@@ -289,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 5953311709827258608, guid: 90458445259948e4fa15c4c8b4a4a773,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.19
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 5953311709827258608, guid: 90458445259948e4fa15c4c8b4a4a773,
         type: 3}
@@ -299,7 +300,7 @@ PrefabInstance:
     - target: {fileID: 5953311709827258608, guid: 90458445259948e4fa15c4c8b4a4a773,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13
+      value: 12.57
       objectReference: {fileID: 0}
     - target: {fileID: 5953311709827258608, guid: 90458445259948e4fa15c4c8b4a4a773,
         type: 3}
@@ -365,6 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangoRecoleccion: 2
   alma: 0
+  almaSpawnPointConsumida: {fileID: 0}
   AlmasAlmacenadas: []
 --- !u!1 &258273833
 GameObject:
