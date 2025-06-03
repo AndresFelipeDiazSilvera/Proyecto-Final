@@ -42,7 +42,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3159196231688639669}
+<<<<<<< HEAD
   - component: {fileID: 6006991689743989776}
+=======
+  - component: {fileID: 4288566856563825857}
+>>>>>>> aae1c3b6e9c438a160119c513520c9e5e71a67df
   m_Layer: 12
   m_Name: Post Processing Weapon
   m_TagString: Untagged
@@ -65,7 +69,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3159196231654250359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &6006991689743989776
+=======
+--- !u!114 &4288566856563825857
+>>>>>>> aae1c3b6e9c438a160119c513520c9e5e71a67df
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,7 +89,11 @@ MonoBehaviour:
   priority: 0
   blendDistance: 63.96
   weight: 1
+<<<<<<< HEAD
   sharedProfile: {fileID: 11400000, guid: d0a4b05ac66dc2a4486878c89bd4e796, type: 2}
+=======
+  sharedProfile: {fileID: 11400000, guid: b80b3bcd87e2ea844a2128e84bc92bdc, type: 2}
+>>>>>>> aae1c3b6e9c438a160119c513520c9e5e71a67df
 --- !u!1 &3159196232184809253
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +103,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3159196232184809255}
+<<<<<<< HEAD
   - component: {fileID: -7835893309589667123}
+=======
+  - component: {fileID: 1163256181939671490}
+>>>>>>> aae1c3b6e9c438a160119c513520c9e5e71a67df
   m_Layer: 11
   m_Name: Post Processing
   m_TagString: Untagged
@@ -114,7 +130,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3159196231654250359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &-7835893309589667123
+=======
+--- !u!114 &1163256181939671490
+>>>>>>> aae1c3b6e9c438a160119c513520c9e5e71a67df
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
