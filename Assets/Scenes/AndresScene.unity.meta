@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Michael.unity.meta
+guid: 162789b0d079f6448bd01a82305b7cbb
+========
 guid: 0aa1e909c21af024eb9aed20f0abacaa
+>>>>>>>> Preproducción:Assets/Scenes/AndresScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
