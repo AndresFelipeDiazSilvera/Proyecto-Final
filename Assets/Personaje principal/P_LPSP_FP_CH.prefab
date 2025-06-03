@@ -855,7 +855,7 @@ Transform:
   m_GameObject: {fileID: 2608678993226655964}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000047683716, y: 0.0000004917383, z: 0.0000003874302, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.221}
+  m_LocalPosition: {x: 0, y: 0, z: -0.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -892,7 +892,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -1211,6 +1211,8 @@ GameObject:
   - component: {fileID: 3112852153656351895}
   - component: {fileID: 4975819633612908598}
   - component: {fileID: 6958676820392842465}
+  - component: {fileID: 6122570049230579337}
+  - component: {fileID: 6022677028240816455}
   m_Layer: 10
   m_Name: P_LPSP_FP_CH
   m_TagString: Player
@@ -1774,6 +1776,36 @@ MonoBehaviour:
   almaSpawnPointConsumida: {fileID: 0}
   AlmasAlmacenadas: []
 --- !u!114 &6958676820392842465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056911554063947085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3652a5dfd340a5468e2a8c97c59bf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 100
+  healthSlider: {fileID: 0}
+--- !u!114 &6122570049230579337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056911554063947085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702e6d6a7b2e1544c9f02cd2c22c12d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangoRecoleccion: 2
+  alma: 0
+  almaSpawnPointConsumida: {fileID: 0}
+  AlmasAlmacenadas: []
+--- !u!114 &6022677028240816455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
