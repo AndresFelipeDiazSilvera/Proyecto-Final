@@ -892,7 +892,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -1210,7 +1210,8 @@ GameObject:
   - component: {fileID: 1522565705509058582}
   - component: {fileID: 3112852153656351895}
   - component: {fileID: 4975819633612908598}
-  - component: {fileID: 6958676820392842465}
+  - component: {fileID: 2214197472282491477}
+  - component: {fileID: 5081518825264245507}
   m_Layer: 10
   m_Name: P_LPSP_FP_CH
   m_TagString: Player
@@ -1773,7 +1774,23 @@ MonoBehaviour:
   alma: 0
   almaSpawnPointConsumida: {fileID: 0}
   AlmasAlmacenadas: []
---- !u!114 &6958676820392842465
+--- !u!114 &2214197472282491477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056911554063947085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702e6d6a7b2e1544c9f02cd2c22c12d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangoRecoleccion: 2
+  alma: 0
+  almaSpawnPointConsumida: {fileID: 0}
+  AlmasAlmacenadas: []
+--- !u!114 &5081518825264245507
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1786,7 +1803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 100
-  healthSlider: {fileID: 0}
+  lifeBar: {fileID: 0}
 --- !u!1 &3113668103826240129
 GameObject:
   m_ObjectHideFlags: 0
