@@ -9,22 +9,21 @@ public class SpanwManager : MonoBehaviour
     [SerializeField] GameObject enemy;
     [SerializeField] int spawnRate;
     [SerializeField] GameObject player;
-    /*
-    [SerializeField] GameObject spawnPoint1;
-    [SerializeField] GameObject spawnPoint2;
-    [SerializeField] GameObject spawnPoint3;*/
     /**/
     private int poolSize = 10;
     public int wave = 1;
-    private int enemiesPerWave = 10;
-    private bool isSpawningWave = false;
-    private int enemiesSpawnedInWave = 0;
-    private int blockSize=5;
+    public int enemiesPerWave = 10;
+    public bool isSpawningWave = false;
+    public int enemiesSpawnedInWave = 0;
+    private int blockSize = 5;
     private SoulCollectorA soulCollectorA;
+    private AlmaSpawnPoint currentAlmaSpawnPoint; // Referencia al AlmaSpawnPoint actual para spawning
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         soulCollectorA = FindFirstObjectByType<SoulCollectorA>();
+        //puntos de spawn
+
         AddToPool(poolSize);
         StartCoroutine(SpawnRutine());
     }
@@ -32,10 +31,29 @@ public class SpanwManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         // Si no hay enemigos vivos, pero aún faltan por aparecer, lanzamos otro bloque.
-        if (soulCollectorA.alma && isSpawningWave && EnemysEnable() == 0 && enemiesSpawnedInWave < enemiesPerWave)
+        Debug.Log("Update - alma: " + soulCollectorA.alma + ", isSpawningWave: " + isSpawningWave + ", EnemysEnable(): " + EnemysEnable() + ", enemiesSpawnedInWave: " + enemiesSpawnedInWave + ", enemiesPerWave: " + enemiesPerWave);
+
+        // Si un alma ha sido activada y no estamos spawneando una oleada, inicia la oleada
+        if (soulCollectorA.alma && !isSpawningWave)
         {
-            StartCoroutine(SpawnWave());
+            isSpawningWave = true;
+            enemiesSpawnedInWave = 0;
+            StartCoroutine(SpawnWave()); // Inicia el primer bloque
+        }
+        // Si estamos spawneando una oleada y el bloque inicial ha sido derrotado
+        // y aún faltan enemigos en la oleada, lanza el siguiente bloque.
+        else if (isSpawningWave && EnemysEnable() == 0 && enemiesSpawnedInWave < enemiesPerWave)
+        {
+            StartCoroutine(SpawnWave()); // Lanza el siguiente bloque
+        }
+        // Si la oleada actual ha terminado (todos los enemigos spawnearon y murieron)
+        else if (isSpawningWave && enemiesSpawnedInWave >= enemiesPerWave && EnemysEnable() == 0)
+        {
+            Debug.Log("Final de oleada detectado. enemiesSpawnedInWave: " + enemiesSpawnedInWave + ", enemiesPerWave: " + enemiesPerWave + ", EnemysEnable(): " + EnemysEnable());
+            wave++;
+            enemiesPerWave *= 2;
+            isSpawningWave = false;
+            soulCollectorA.alma = false; // Desactiva el alma al final de la oleada completa
         }
     }
 
@@ -72,14 +90,21 @@ public class SpanwManager : MonoBehaviour
     }
 
     /*Metodo para la posicion del spanw de los enemigos*/
+    public void SetCurrentAlmaSpawnPoint(AlmaSpawnPoint almaSpawnPoint)
+    {
+        currentAlmaSpawnPoint = almaSpawnPoint;
+    }
     public Vector3 SpawnPoint()
     {
-        Vector3 pos = transform.position;
-        // Genera un desplazamiento aleatorio en un rango alrededor del punto de spawn
-        float offsetX = Random.Range(-10, 10);
-        float offsetZ = Random.Range(-10, 10);
-        pos += new Vector3(offsetX, 0f, offsetZ);
-        return pos;
+        if (currentAlmaSpawnPoint != null)
+        {
+            return currentAlmaSpawnPoint.GetSpawnPoint();
+        }
+        else
+        {
+            Debug.LogWarning("No se ha consumido un alma o no tiene AlmaSpawnPoint asignado. Spawneando en la posición del SpawnManager.");
+            return transform.position;//si no hay alma consumida
+        }
     }
 
     /*metodo que spanwnea los enemigos*/
@@ -87,23 +112,7 @@ public class SpanwManager : MonoBehaviour
     {
         while (true)
         {
-            if (!isSpawningWave && soulCollectorA.alma)
-            {
-                isSpawningWave = true;
-                enemiesSpawnedInWave = 0;//enemigos que estan en la escena
-
-                yield return StartCoroutine(SpawnWave());
-
-                // Esperar hasta que se terminen todos los enemigos de la ola
-                yield return new WaitUntil(() => enemiesSpawnedInWave >= enemiesPerWave && EnemysEnable() == 0);
-                soulCollectorA.alma = false;//desativamos alma para que no ocurra otra ola
-                // Nueva ola
-                wave++;
-                enemiesPerWave *= 2;
-                isSpawningWave = false;
-            }
-
-            yield return null;
+            yield return null; // Espera el siguiente frame
         }
     }
     /*Metodo para el spanw de las olas*/
@@ -112,7 +121,7 @@ public class SpanwManager : MonoBehaviour
         //enemigos que aun faltan por spanw
         int enemigosRestantes = enemiesPerWave - enemiesSpawnedInWave;
         int cantidadEnEsteBloque = Mathf.Min(blockSize, enemigosRestantes);//enemigos que aparecen primero por ronda
-        //recorremos la cantidad de enemigos que aparecen primero simpre que sean mayores que 0
+                                                                           //recorremos la cantidad de enemigos que aparecen primero simpre que sean mayores que 0
         for (int i = 0; i < cantidadEnEsteBloque; i++)
         {
             //si alma es verdadera spanw enemigos
@@ -120,12 +129,11 @@ public class SpanwManager : MonoBehaviour
             {
                 SpawnEnemy();
                 enemiesSpawnedInWave++;//me cuenta los enemigos que an aparecido
+                Debug.Log("SpawnWave - enemiesSpawnedInWave: " + enemiesSpawnedInWave);
                 yield return new WaitForSeconds(spawnRate);
             }
         }
-
     }
-
     //metodos para contar los enemigos activos
     public int EnemysEnable()
     {
@@ -137,7 +145,14 @@ public class SpanwManager : MonoBehaviour
                 count++;
             }
         }
+        Debug.Log("Enemigos activos:" + count);
         return count;
 
+    }
+    //metodo para manegar la muerte de los enemigos 
+    public void EnemyDied(GameObject enemyDie)
+    {
+        Debug.Log("enemigo:" + enemyDie + " muerto");
+        enemyDie.SetActive(false);
     }
 }

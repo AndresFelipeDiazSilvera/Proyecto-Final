@@ -21,16 +21,17 @@ public class Projectile : MonoBehaviour {
 	public Transform [] metalImpactPrefabs;
 	public Transform [] dirtImpactPrefabs;
 	public Transform []	concreteImpactPrefabs;
+	public int damage = 50;//daño de la bala
 
-	private void Start ()
+	private void Start()
 	{
 		//Grab the game mode service, we need it to access the player character!
 		var gameModeService = ServiceLocator.Current.Get<IGameModeService>();
 		//Ignore the main player character's collision. A little hacky, but it should work.
 		Physics.IgnoreCollision(gameModeService.GetPlayerCharacter().GetComponent<Collider>(), GetComponent<Collider>());
-		
+
 		//Start destroy timer
-		StartCoroutine (DestroyAfter ());
+		StartCoroutine(DestroyAfter());
 	}
 
 	//If the bullet collides with anything
@@ -40,6 +41,18 @@ public class Projectile : MonoBehaviour {
 		if (collision.gameObject.GetComponent<Projectile>() != null)
 			return;
 		
+		 //If bullet collides with "Enemy" tag
+        if (collision.transform.CompareTag("Enemy"))
+        {
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+            Destroy(gameObject); // Destruir la bala al impactar con un enemigo
+            return; // Importante salir del método para evitar otras lógicas de impacto
+        }
+
 		// //Ignore collision if bullet collides with "Player" tag
 		// if (collision.gameObject.CompareTag("Player")) 
 		// {
@@ -56,14 +69,14 @@ public class Projectile : MonoBehaviour {
 		//
 		//If destroy on impact is false, start 
 		//coroutine with random destroy timer
-		if (!destroyOnImpact) 
+		if (!destroyOnImpact)
 		{
-			StartCoroutine (DestroyTimer ());
+			StartCoroutine(DestroyTimer());
 		}
 		//Otherwise, destroy bullet on impact
-		else 
+		else
 		{
-			Destroy (gameObject);
+			Destroy(gameObject);
 		}
 
 		//If bullet collides with "Blood" tag
@@ -141,20 +154,15 @@ public class Projectile : MonoBehaviour {
 		}
 	}
 
-	private IEnumerator DestroyTimer () 
-	{
-		//Wait random time based on min and max values
-		yield return new WaitForSeconds
-			(Random.Range(minDestroyTime, maxDestroyTime));
-		//Destroy bullet object
-		Destroy(gameObject);
-	}
+	 private IEnumerator DestroyTimer()
+    {
+        yield return new WaitForSeconds(Random.Range(minDestroyTime, maxDestroyTime));
+        Destroy(gameObject);
+    }
 
-	private IEnumerator DestroyAfter () 
-	{
-		//Wait for set amount of time
-		yield return new WaitForSeconds (destroyAfter);
-		//Destroy bullet object
-		Destroy (gameObject);
-	}
+    private IEnumerator DestroyAfter()
+    {
+        yield return new WaitForSeconds(destroyAfter);
+        Destroy(gameObject);
+    }
 }

@@ -6,8 +6,19 @@ public class SoulCollectorA : MonoBehaviour
     [Header("Configuración de Recolección")]
     public float rangoRecoleccion = 2f;
     public bool alma = false;
-    [SerializeField]List<GameObject> AlmasAlmacenadas = new List<GameObject>();
-    
+    public AlmaSpawnPoint almaSpawnPointConsumida;
+    [SerializeField] List<GameObject> AlmasAlmacenadas = new List<GameObject>();
+    private SpanwManager spawnManager;
+
+
+    void Start()
+    {
+        spawnManager = FindFirstObjectByType<SpanwManager>(); // Obtener la referencia al SpawnManager
+        if (spawnManager == null)
+        {
+            Debug.LogError("No se encontró un objeto de tipo SpanwManager en la escena.");
+        }
+    }
     void Update()
     {
         // Solo buscar y recoger cuando se presiona E
@@ -41,15 +52,30 @@ public class SoulCollectorA : MonoBehaviour
             }
         }
 
-        // Solo destruir si encontró un alma dentro del rango
+        // Solo destruir si encontro un alma dentro del rango
         if (almaMasCercana != null)
         {
+            AlmaSpawnPoint Alma = almaMasCercana.GetComponent<AlmaSpawnPoint>();//el alma que alamacena los puntos
+            if (Alma != null)
+            {
+                // Desvincular los puntos de spawn antes de desactivar el alma
+                foreach (Transform spawnPoint in Alma.spawnPoints)
+                {
+                    spawnPoint.SetParent(null); // Los desvincula del alma
+                }
+                almaSpawnPointConsumida = Alma;
+            }
+            if (spawnManager != null)
+            {
+                spawnManager.SetCurrentAlmaSpawnPoint(Alma);
+            }
             almaMasCercana.SetActive(false);
             AlmasAlmacenadas.Add(almaMasCercana);
             alma = true;
         }
+
     }
-    
+
     // Visualizar el rango de recolección en el editor
     void OnDrawGizmosSelected()
     {

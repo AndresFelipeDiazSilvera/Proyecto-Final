@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -1889603419381071260}
   m_Layer: 0
   m_Name: Enemigo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,6 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c24cea3bdbf7f49a58efd45e06b0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointLife: 200
+  pointLife: 100
   poitDamage: 5
-  target: {fileID: 0}
+  attackDuration: 2
