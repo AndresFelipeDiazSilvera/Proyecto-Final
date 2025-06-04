@@ -12,12 +12,15 @@ public class Enemy : MonoBehaviour
     private HealtSystem playerHealt;
     private bool isAttacking = false;
     private SpanwManager spawnManager;
+    private Animator animator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         playerHealt = FindFirstObjectByType<HealtSystem>();
         spawnManager = FindFirstObjectByType<SpanwManager>(); // Asigna la referencia
+        animator = GetComponent<Animator>();
         if (spawnManager == null)
         {
             Debug.LogError("No se encontró el SpawnManager en la escena.");
@@ -79,7 +82,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //Debug.Log("el enemigo choco con el player");
-             if (!isAttacking)
+            if (!isAttacking)
             {
                 //Debug.Log("El enemigo puede atacar al jugador (desde OnCollisionEnter).");
                 AttackTarget(); // Llama al método de ataque
@@ -89,10 +92,22 @@ public class Enemy : MonoBehaviour
     //metodo para manejar el ataque de los enemigos 
     public IEnumerator Attack()
     {
-       Debug.Log("EL enemigo esta atacando al jugador (coroutine).");
-        playerHealt.TakeDamage(poitDamage); // El jugador toma daño
-        yield return new WaitForSeconds(attackDuration); // Espera la duración del ataque
-        isAttacking = false; // Después de la espera, el enemigo puede volver a atacar
+        Debug.Log("EL enemigo esta atacando al jugador (coroutine).");
+
+        // Activar animación
+        animator.SetBool("isAttacking", true);
+        agent.isStopped = true;
+
+        yield return new WaitForSeconds(0.5f); // esperar parte inicial del salto
+        playerHealt.TakeDamage(poitDamage); // hacer daño
+
+        yield return new WaitForSeconds(attackDuration - 0.5f);
+
+        // Terminar ataque
+        isAttacking = false;
+        agent.isStopped = false;
+        animator.SetBool("isAttacking", false);
+
         Debug.Log("Ataque del enemigo terminado. isAttacking = false.");
     }
     //metodo para manejar la muerte de los enemigos 
