@@ -162,9 +162,9 @@ namespace InfimaGames.LowPolyShooterPack
             Vector2 frameInput = playerCharacter.GetInputMovement();
             //Calculate local-space direction by using the player's input.
             var movement = new Vector3(frameInput.x, 0.0f, frameInput.y);
-            
+
             //Running speed calculation.
-            if(playerCharacter.IsRunning())
+            if (playerCharacter.IsRunning())
                 movement *= speedRunning;
             else
             {
@@ -176,9 +176,9 @@ namespace InfimaGames.LowPolyShooterPack
             movement = transform.TransformDirection(movement);
 
             #endregion
-            
+
             //Update Velocity.
-            Velocity = new Vector3(movement.x, 0.0f, movement.z);
+            Velocity = new Vector3(movement.x, rigidBody.linearVelocity.y, movement.z);///se modifico la velocidad para que mantenga la fuerza para subir los escalones
         }
 
         /// <summary>
