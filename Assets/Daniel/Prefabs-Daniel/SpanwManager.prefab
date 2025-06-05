@@ -45,7 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolEnemy: []
-  enemy: {fileID: 2589463928147943378, guid: 598dee76a99bc0f4e9828d12643f33b1, type: 3}
+  enemy: {fileID: 4466797589270940119, guid: e22560b6782ad784f90dffce920ba2c4, type: 3}
   spawnRate: 1
+  player: {fileID: 0}
   wave: 1
-  alma: 1
+  enemiesPerWave: 10
+  isSpawningWave: 0
+  enemiesSpawnedInWave: 0
