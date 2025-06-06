@@ -5,6 +5,8 @@ public class HealtSystem : MonoBehaviour
 {
     [SerializeField] int playerHealth = 100;
     [SerializeField] Slider lifeBar;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip damageSound;
     void Start()
     {
         // Inicializar el Slider
@@ -25,6 +27,7 @@ public class HealtSystem : MonoBehaviour
     {
         Debug.Log("EL JUGADOR TOMO DAÑO");
         playerHealth -= damege;
+        audioSource.PlayOneShot(damageSound);
         if (lifeBar != null)
         {
             lifeBar.value = playerHealth;

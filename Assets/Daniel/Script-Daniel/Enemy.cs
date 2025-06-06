@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     private bool isAttacking = false;
     private SpanwManager spawnManager;
     private Animator animator;
+    private AudioManagerEnemy audioManagerEnemy;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
         playerHealt = FindFirstObjectByType<HealtSystem>();
         spawnManager = FindFirstObjectByType<SpanwManager>(); // Asigna la referencia
         animator = GetComponent<Animator>();
+        audioManagerEnemy = FindFirstObjectByType<AudioManagerEnemy>();
         if (spawnManager == null)
         {
             Debug.LogError("No se encontró el SpawnManager en la escena.");
@@ -71,6 +73,7 @@ public class Enemy : MonoBehaviour
         if (target != null && playerHealt != null && !isAttacking)
         {
             Debug.Log("esta atacando");
+            audioManagerEnemy.AttackPlaySound();
             isAttacking = true;
             StartCoroutine(Attack());
         }
@@ -113,6 +116,10 @@ public class Enemy : MonoBehaviour
     //metodo para manejar la muerte de los enemigos 
     void Die()
     {
+        if (audioManagerEnemy != null)
+        {
+            audioManagerEnemy.DeadPlaySound();
+        }
         //Debug.Log(gameObject.name + " ha muerto.");
         if (spawnManager != null)
         {
