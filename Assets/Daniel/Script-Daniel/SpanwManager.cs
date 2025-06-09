@@ -18,10 +18,12 @@ public class SpanwManager : MonoBehaviour
     private int blockSize = 5;
     private SoulCollectorA soulCollectorA;
     private AlmaSpawnPoint currentAlmaSpawnPoint; // Referencia al AlmaSpawnPoint actual para spawning
+    private AlmaComprobacion almaComprobacion;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         soulCollectorA = FindFirstObjectByType<SoulCollectorA>();
+        almaComprobacion = FindAnyObjectByType<AlmaComprobacion>();
         //puntos de spawn
 
         AddToPool(poolSize);
@@ -51,9 +53,11 @@ public class SpanwManager : MonoBehaviour
         {
             //Debug.Log("Final de oleada detectado. enemiesSpawnedInWave: " + enemiesSpawnedInWave + ", enemiesPerWave: " + enemiesPerWave + ", EnemysEnable(): " + EnemysEnable());
             wave++;
+            almaComprobacion.EnableAlma();
             enemiesPerWave *= 2;
             isSpawningWave = false;
             soulCollectorA.alma = false; // Desactiva el alma al final de la oleada completa
+
         }
     }
 
