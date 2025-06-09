@@ -9,11 +9,13 @@ public class SoulCollectorA : MonoBehaviour
     public AlmaSpawnPoint almaSpawnPointConsumida;
     [SerializeField] List<GameObject> AlmasAlmacenadas = new List<GameObject>();
     private SpanwManager spawnManager;
+    private AudioManager audioManager;
 
 
     void Start()
     {
         spawnManager = FindFirstObjectByType<SpanwManager>(); // Obtener la referencia al SpawnManager
+        audioManager = FindAnyObjectByType<AudioManager>(); // obtener la referencia al AudioManager
         if (spawnManager == null)
         {
             Debug.LogError("No se encontró un objeto de tipo SpanwManager en la escena.");
@@ -25,6 +27,7 @@ public class SoulCollectorA : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             RecogerAlmaCercana();
+            audioManager.AlmaPlay();
         }
     }
 
