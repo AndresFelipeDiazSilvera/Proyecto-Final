@@ -1,4 +1,6 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -33,6 +35,13 @@ public class AudioManager : MonoBehaviour
             audioSource = GetComponent<AudioSource>();
         }
     }
+    private void Start() {
+        string nombreEscena = SceneManager.GetActiveScene().name;
+        if (nombreEscena=="UImenu")
+        {
+            MenuPlay();
+        }
+    }
     //metodos que reproducen audio de enemigo
     public void AttackPlaySound()
     {
@@ -50,21 +59,27 @@ public class AudioManager : MonoBehaviour
     //metodos que reproducen audio de ambiente
     public void CrunchPlay()
     {
-        audioSource.PlayOneShot(crunchAmbiente);
+        audioSourceAmbiente.PlayOneShot(crunchAmbiente);
     }
     public void SuspensoMusicAmbientePlay()
     {
-        audioSource.PlayOneShot(suspensoMusicAmbiente);
+        audioSourceAmbiente.PlayOneShot(suspensoMusicAmbiente);
     }
     public void ForestPlay()
     {
-        audioSource.PlayOneShot(forestAmbiente);
+        audioSourceAmbiente.PlayOneShot(forestAmbiente);
     }
     public void VientoPlay()
     {
-        audioSource.PlayOneShot(vientoAmbiente);
+        audioSourceAmbiente.PlayOneShot(vientoAmbiente);
     }
 
     //metodos que reproducen Musica
+    public void MenuPlay()
+    {
+        audioSource.clip = horrorPianoMusic;
+        audioSource.loop = true;
+        audioSource.Play();
+    }
 }
 

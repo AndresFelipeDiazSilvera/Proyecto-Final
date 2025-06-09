@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class HealtSystem : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class HealtSystem : MonoBehaviour
     [SerializeField] Slider lifeBar;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip damageSound;
+    [SerializeField] GameObject GameOver;
+
     void Start()
     {
         // Inicializar el Slider
@@ -36,7 +39,7 @@ public class HealtSystem : MonoBehaviour
         }
         if (playerHealth <= 0)
         {
-            Debug.Log("player sin vida");
+            
         }
     }
 }

@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System;
 public class ButtonPlay : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -8,10 +10,11 @@ public class ButtonPlay : MonoBehaviour
     {
         Pause ();
     }
-    public void Play ()
+    public void Play()
     {
         Time.timeScale = 1;
         Debug.Log("Juego reanudado: " + (Time.timeScale == 1));
+        SceneManager.LoadScene("Demo");
     }
     // Update is called once per frame
     void Update()
