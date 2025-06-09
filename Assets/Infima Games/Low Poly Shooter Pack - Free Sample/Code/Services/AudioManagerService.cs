@@ -2,6 +2,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace InfimaGames.LowPolyShooterPack
 {
@@ -13,6 +14,40 @@ namespace InfimaGames.LowPolyShooterPack
         /// <summary>
         /// Contains data related to playing a OneShot audio.
         /// </summary>
+        private GameObject player;
+        private HealtSystem healtSystem;
+        private void Start()
+        {
+            // Solo intenta encontrar el Player y HealtSystem si estamos en la escena "Demo"
+            if (SceneManager.GetActiveScene().name == "Demo")
+            {
+                InitializeHealtSystem();
+            }
+            else
+            {
+                Debug.Log("AudioManagerService: No se inicializa HealtSystem porque no estamos en una escena de juego.");
+            }
+        }
+        private void InitializeHealtSystem()
+        {
+            if (player == null)
+            {
+                player = GameObject.Find("Player");
+            }
+
+            if (player != null)
+            {
+                healtSystem = player.GetComponent<HealtSystem>();
+                if (healtSystem == null)
+                {
+                    Debug.LogError("AudioManagerService: El GameObject 'Player' fue encontrado, pero no tiene el componente HealtSystem.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("AudioManagerService: No se encontró el GameObject 'Player' en esta escena. Algunas funciones de audio podrían no operar correctamente.");
+            }
+        }
         private readonly struct OneShotCoroutine
         {
             /// <summary>
@@ -27,7 +62,7 @@ namespace InfimaGames.LowPolyShooterPack
             /// Delay.
             /// </summary>
             public float Delay { get; }
-            
+
             /// <summary>
             /// Constructor.
             /// </summary>
@@ -49,7 +84,7 @@ namespace InfimaGames.LowPolyShooterPack
         {
             //Wait for the audio source to complete playing the clip.
             yield return new WaitWhile(() => source.isPlaying);
-            
+
             //Destroy the audio game object, since we're not using it anymore.
             //This isn't really too great for performance, but it works, for now.
             DestroyImmediate(source.gameObject);
@@ -65,7 +100,7 @@ namespace InfimaGames.LowPolyShooterPack
             //Play.
             PlayOneShot_Internal(value.Clip, value.Settings);
         }
-        
+
         /// <summary>
         /// Internal PlayOneShot. Basically does the whole function's name!
         /// </summary>
@@ -74,7 +109,11 @@ namespace InfimaGames.LowPolyShooterPack
             //No need to do absolutely anything if the clip is null.
             if (clip == null)
                 return;
-            
+                
+            if (healtSystem == null && SceneManager.GetActiveScene().name == "Demo")
+            {
+                InitializeHealtSystem();
+            }
             //Spawn a game object for the audio source.
             var newSourceObject = new GameObject($"Audio Source -> {clip.name}");
             //Add an audio source component to that object.
@@ -84,12 +123,16 @@ namespace InfimaGames.LowPolyShooterPack
             newAudioSource.volume = settings.Volume;
             //Set spatial blend.
             newAudioSource.spatialBlend = settings.SpatialBlend;
-            
+
             //Play the clip!
-            newAudioSource.PlayOneShot(clip);
-            
+            if (!healtSystem.lose)
+            {
+                newAudioSource.PlayOneShot(clip);
+            }
+
+
             //Start a coroutine that will destroy the whole object once it is done!
-            if(settings.AutomaticCleanup)
+            if (settings.AutomaticCleanup)
                 StartCoroutine(nameof(DestroySourceWhenFinished), newAudioSource);
         }
 

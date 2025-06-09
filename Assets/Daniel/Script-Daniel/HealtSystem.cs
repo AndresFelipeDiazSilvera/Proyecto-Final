@@ -8,7 +8,17 @@ public class HealtSystem : MonoBehaviour
     [SerializeField] Slider lifeBar;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip damageSound;
-    [SerializeField] GameObject GameOver;
+    [SerializeField] GameObject gameOver;
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject buttonRestart;
+    private VideoPlayer video;
+    public bool lose=false;
+
+    void Awake()
+    {
+        video = gameOver.GetComponent<VideoPlayer>();
+        //video.Stop();
+    }
 
     void Start()
     {
@@ -39,7 +49,11 @@ public class HealtSystem : MonoBehaviour
         }
         if (playerHealth <= 0)
         {
-            
+            lose = true;
+            gameOver.SetActive(true);
+            video.Play();
+            Time.timeScale = 0;
+            buttonRestart.SetActive(true);
         }
     }
 }

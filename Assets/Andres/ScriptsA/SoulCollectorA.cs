@@ -27,7 +27,6 @@ public class SoulCollectorA : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             RecogerAlmaCercana();
-            audioManager.AlmaPlay();
         }
     }
 
@@ -72,6 +71,7 @@ public class SoulCollectorA : MonoBehaviour
             {
                 spawnManager.SetCurrentAlmaSpawnPoint(Alma);
             }
+            audioManager.AlmaPlay();
             almaMasCercana.SetActive(false);
             AlmasAlmacenadas.Add(almaMasCercana);
             alma = true;
