@@ -2,11 +2,28 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-     //audios
+    //audios
     [SerializeField] AudioClip enemyAttackSound;
     [SerializeField] AudioClip enemyDeadSound;
+    [SerializeField] AudioClip almaSound;
+    //ambiente
+    [SerializeField] AudioClip suspensoAmbiente;
+    [SerializeField] AudioClip crunchAmbiente;
+    [SerializeField] AudioClip suspensoMusicAmbiente;
+    [SerializeField] AudioClip forestAmbiente;
+    [SerializeField] AudioClip vientoAmbiente;
+    //musica
+    [SerializeField] AudioClip simplePianoMusic;
+    [SerializeField] AudioClip esperanzaMusic;
+    [SerializeField] AudioClip energeticaMusic;
+    [SerializeField] AudioClip horrorPianoMusic;
+    [SerializeField] AudioClip melancolicMusic;
+    [SerializeField] AudioClip suspensoMusic;
+    [SerializeField] AudioClip detectiveMusic;
     //audio sorce
     [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource audioSourceAmbiente;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -16,7 +33,7 @@ public class AudioManager : MonoBehaviour
             audioSource = GetComponent<AudioSource>();
         }
     }
-    //metodos que reproducen audio
+    //metodos que reproducen audio de enemigo
     public void AttackPlaySound()
     {
         audioSource.PlayOneShot(enemyAttackSound);
@@ -25,6 +42,29 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.PlayOneShot(enemyDeadSound);
     }
+    //metodo que reproducen audio de alma
+    public void AlmaPlay()
+    {
+        audioSource.PlayOneShot(almaSound);
+    }
+    //metodos que reproducen audio de ambiente
+    public void CrunchPlay()
+    {
+        audioSource.PlayOneShot(crunchAmbiente);
+    }
+    public void SuspensoMusicAmbientePlay()
+    {
+        audioSource.PlayOneShot(suspensoMusicAmbiente);
+    }
+    public void ForestPlay()
+    {
+        audioSource.PlayOneShot(forestAmbiente);
+    }
+    public void VientoPlay()
+    {
+        audioSource.PlayOneShot(vientoAmbiente);
+    }
 
+    //metodos que reproducen Musica
 }
 

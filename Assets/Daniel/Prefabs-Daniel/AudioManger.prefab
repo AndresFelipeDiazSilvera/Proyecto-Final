@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8779582490700253266}
   - component: {fileID: 2738643847644110211}
   - component: {fileID: 723085174964341801}
+  - component: {fileID: 6206030044692955288}
+  - component: {fileID: 5031016565643127121}
   m_Layer: 0
   m_Name: AudioManger
   m_TagString: Untagged
@@ -145,4 +147,129 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyAttackSound: {fileID: 8300000, guid: fef34bdf4f56d0b41b711878ccf874a9, type: 3}
   enemyDeadSound: {fileID: 8300000, guid: 4d99c72da98896644b89eb0c47165b9c, type: 3}
+  almaSound: {fileID: 8300000, guid: 00785ea6634efed448c92edfc998fe61, type: 3}
+  suspensoAmbiente: {fileID: 8300000, guid: b7f1cfec47f701e46afe83ca0ca08f82, type: 3}
+  crunchAmbiente: {fileID: 8300000, guid: 564c3ea908189b146841389d59ffadd0, type: 3}
+  suspensoMusicAmbiente: {fileID: 8300000, guid: 891681122ca9c4f459a800b83828d91c,
+    type: 3}
+  forestAmbiente: {fileID: 8300000, guid: 234ba3fce60c1e74f86bc21b1363f205, type: 3}
+  vientoAmbiente: {fileID: 8300000, guid: d0ce1a99f6613ea49a4f98575961d59e, type: 3}
+  simplePianoMusic: {fileID: 8300000, guid: 80468f3053456b640819fe8a2b78605d, type: 3}
+  esperanzaMusic: {fileID: 8300000, guid: 41d51c75c7df6fb44afc938005baf58c, type: 3}
+  energeticaMusic: {fileID: 8300000, guid: 556a17fef2ca00340839eb6be03564c1, type: 3}
+  horrorPianoMusic: {fileID: 8300000, guid: 761ae5958027e714faae4560eb8032bb, type: 3}
+  melancolicMusic: {fileID: 8300000, guid: 8ca3a7a2715f8004e97535b3fe9f9bfb, type: 3}
+  suspensoMusic: {fileID: 8300000, guid: 41f563a61c6ae9243a7ab8ca5f1329eb, type: 3}
+  detectiveMusic: {fileID: 8300000, guid: dc9bce8ee1ec7ab44a4640607c2a8ab0, type: 3}
   audioSource: {fileID: 2738643847644110211}
+  audioSourceAmbiente: {fileID: 6206030044692955288}
+--- !u!82 &6206030044692955288
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3942993877800207321}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 3fcdb23bde063e94fa0b60ccf87604d6,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &5031016565643127121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3942993877800207321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679234daa64a753419e054aee9334abc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
