@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class AudioManagerEnemy : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    //audios
+     //audios
     [SerializeField] AudioClip enemyAttackSound;
     [SerializeField] AudioClip enemyDeadSound;
     //audio sorce
@@ -25,4 +25,6 @@ public class AudioManagerEnemy : MonoBehaviour
     {
         audioSource.PlayOneShot(enemyDeadSound);
     }
+
 }
+
