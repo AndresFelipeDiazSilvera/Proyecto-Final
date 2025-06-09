@@ -4,12 +4,8 @@ public class Selected : MonoBehaviour
 {
     LayerMask mask;
     public float distance = 1f;
-
-    //public Texture2D puntero;
     public GameObject TextDetected;
-    GameObject ultimoReconocido = null;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mask = LayerMask.GetMask("Raycast Detect");
