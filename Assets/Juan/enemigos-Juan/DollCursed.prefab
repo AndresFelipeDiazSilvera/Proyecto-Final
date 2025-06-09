@@ -264,5 +264,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLife: 100
-  poitDamage: 30
+  poitDamage: 5
   attackDuration: 3
