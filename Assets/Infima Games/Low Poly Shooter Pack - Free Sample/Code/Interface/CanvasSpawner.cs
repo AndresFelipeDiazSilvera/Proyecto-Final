@@ -9,13 +9,15 @@ namespace InfimaGames.LowPolyShooterPack.Interface
     /// </summary>
     public class CanvasSpawner : MonoBehaviour
     {
+        private HealtSystem healtSystem;
         #region FIELDS SERIALIZED
 
         [Header("Settings")]
-        
+
         [Tooltip("Canvas prefab spawned at start. Displays the player's user interface.")]
         [SerializeField]
         private GameObject canvasPrefab;
+        public GameObject ss;
 
         #endregion
 
@@ -26,10 +28,18 @@ namespace InfimaGames.LowPolyShooterPack.Interface
         /// </summary>
         private void Awake()
         {
+            healtSystem = FindFirstObjectByType<HealtSystem>();
             //Spawn Interface.
-            Instantiate(canvasPrefab);
+            ss=Instantiate(canvasPrefab);
         }
 
         #endregion
+        void Update()
+        {
+            if (healtSystem.lose==true)
+            {
+                ss.SetActive(false);
+            }
+        }
     }
 }
