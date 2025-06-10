@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Infima Games/Low Poly Shooter Pack - Free Sample/Scenes/S_Content_Overview.unity
     guid: 63fdc04a097eb0b4ba4af78a98dac40d
   - enabled: 1
+    path: Assets/Scenes/UImenu.unity
+    guid: 941db0a2d5ba65c4d96bba5317bf06b2
+  - enabled: 1
+    path: Assets/Scenes/Cinematica 1.unity
+    guid: 2a113f5f2e2a76841b679bf4b9ffeaa3
+  - enabled: 1
+    path: Assets/Scenes/Cinematica 2.unity
+    guid: 6be1139a04bdb0948ad5f352fa502ff4
+  - enabled: 1
     path: Assets/Scenes/Demo.unity
     guid: bc3830ba3c506854ab13069e37d01b66
   m_configObjects:

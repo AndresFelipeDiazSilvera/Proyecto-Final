@@ -14,7 +14,7 @@ public class ButtonPlay : MonoBehaviour
     {
         Time.timeScale = 1;
         Debug.Log("Juego reanudado: " + (Time.timeScale == 1));
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     // Update is called once per frame
     void Update()
