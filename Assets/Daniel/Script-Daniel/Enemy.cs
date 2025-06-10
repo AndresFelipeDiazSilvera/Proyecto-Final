@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     private NavMeshAgent agent;
     private HealtSystem playerHealt;
     private bool isAttacking = false;
+    private bool isDeath = false;
     private SpanwManager spawnManager;
     private Animator animator;
     private AudioManager audioManager;
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
     }
     void OnEnable()
     {
+        isDeath = false; // Reinicia el estado de muerte al habilitar el objeto
         pointLife = 100;
         isAttacking = false;
     }
@@ -64,15 +66,19 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         pointLife -= damage;
+        //Debug.Log("impacto en enemigo. Vida restante: " + pointLife);
     }
     //metodo para que ataque el obgetivo 
     public void AttackTarget()
     {
-        if (target != null && playerHealt != null && !isAttacking)
+        Debug.Log("Entro al metodo de atacar");
+        if (target != null && playerHealt != null && !isAttacking && !isDeath)
         {
+            Debug.Log("esta atacando");
             audioManager.AttackPlaySound();
             isAttacking = true;
             StartCoroutine(Attack());
+            
         }
     }
     //metodo para manegar las coliciones 
@@ -81,9 +87,11 @@ public class Enemy : MonoBehaviour
         //si coliciona con el palyer ataque
         if (collision.gameObject.CompareTag("Player"))
         {
+            //Debug.Log("el enemigo choco con el player");
             if (!isAttacking)
             {
-                AttackTarget(); // Llama al metodo de ataque
+                //Debug.Log("El enemigo puede atacar al jugador (desde OnCollisionEnter).");
+                AttackTarget(); // Llama al método de ataque
             }
         }
     }
@@ -105,19 +113,40 @@ public class Enemy : MonoBehaviour
         isAttacking = false;
         agent.isStopped = false;
         animator.SetBool("isAttacking", false);
+
+        Debug.Log("Ataque del enemigo terminado. isAttacking = false.");
     }
     //metodo para manejar la muerte de los enemigos 
     void Die()
     {
+        if (!isDeath) // Asegúrate que solo muera una vez
+        {
+            isDeath = true;
+            StartCoroutine(Death());
+        }
+    }
+    public IEnumerator Death()
+    {
+        Debug.Log("El enemigo está muriendo...");
+
+        // Activar animación de muerte
+        animator.SetBool("isDeath",true);  // usa SetTrigger en lugar de SetBool
+        agent.isStopped = true;
+
+        // Sonido de muerte
         if (audioManager != null)
         {
             audioManager.DeadPlaySound();
         }
+
+        // Esperar a que la animación termine
+        yield return new WaitForSeconds(2.5f);
+
+        // Notificar al spawnManager (si existe)
         if (spawnManager != null)
         {
-            spawnManager.EnemyDied(gameObject); // Llama a una nueva funcion en el SpawnManager
+            spawnManager.EnemyDied(gameObject);
         }
-
     }
 
 }
