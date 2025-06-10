@@ -980,11 +980,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9038420910811902017, guid: 90458445259948e4fa15c4c8b4a4a773,
         type: 3}
-      propertyPath: TextDetected
-      value: 
-      objectReference: {fileID: 1161641829}
-    - target: {fileID: 9038420910811902017, guid: 90458445259948e4fa15c4c8b4a4a773,
-        type: 3}
       propertyPath: soulDetected
       value: 
       objectReference: {fileID: 1380296451}
@@ -1066,12 +1061,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf92739b4c2eee46b913ba302433c42, type: 3}
---- !u!1 &1161641829 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7292971385029329510, guid: 0a1587b17d3f5a84585abdb350612d06,
-    type: 3}
-  m_PrefabInstance: {fileID: 456088882}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1162266280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6315811215446064588, guid: ad53ef31d284bec41921dbafefbd5f11,
@@ -1733,6 +1722,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446264580802309106, guid: 2fd572785ab00284cb186f1f8e1a71f7,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446264580802309106, guid: 2fd572785ab00284cb186f1f8e1a71f7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446264580802309106, guid: 2fd572785ab00284cb186f1f8e1a71f7,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
