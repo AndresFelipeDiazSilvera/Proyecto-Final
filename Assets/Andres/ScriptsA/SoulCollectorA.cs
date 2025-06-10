@@ -7,7 +7,7 @@ public class SoulCollectorA : MonoBehaviour
     public float rangoRecoleccion = 2f;
     public bool alma = false;
     public AlmaSpawnPoint almaSpawnPointConsumida;
-    [SerializeField] List<GameObject> AlmasAlmacenadas = new List<GameObject>();
+    public List<GameObject> AlmasAlmacenadas = new List<GameObject>();
     private SpanwManager spawnManager;
     private AudioManager audioManager;
 
