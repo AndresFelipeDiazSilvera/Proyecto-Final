@@ -4,12 +4,14 @@ public class Selected : MonoBehaviour
 {
     LayerMask mask;
     public float distance = 1f;
-    public GameObject TextDetected;
-    
+    public GameObject soulDetected;
+    public GameObject interactDetected;
+
     void Start()
     {
         mask = LayerMask.GetMask("Raycast Detect");
-        TextDetected.SetActive(false);
+        soulDetected.SetActive(false);
+        interactDetected.SetActive(false);
     }
 
     // Update is called once per frame
@@ -19,21 +21,39 @@ public class Selected : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distance))
         {
-            
-            if (hit.collider.tag == "Interactive")
+
+            if (hit.collider.tag == "Soul")
             {
-                TextDetected.SetActive(true);
+                soulDetected.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hit.collider.transform.GetComponent<InteractiveObject>().ActiveObject();
-                    TextDetected.SetActive(false);
+                    soulDetected.SetActive(false);
                 }
             }
-            
+
         }
         else
         {
-            TextDetected.SetActive(false);
+            soulDetected.SetActive(false);
+        }
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distance))
+        {
+
+            if (hit.collider.tag == "Interactive")
+            {
+                interactDetected.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.transform.GetComponent<InteractiveObject>().ActiveObject();
+                    interactDetected.SetActive(false);
+                }
+            }
+
+        }
+        else
+        {
+            interactDetected.SetActive(false);
         }
     } 
 }
