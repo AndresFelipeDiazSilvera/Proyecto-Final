@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class AmbientSoundController : MonoBehaviour
 {
-    int soundPlay = 0;
-    float delayPlaySound = 60f;
+    int soundPlay = 0;//numero random
+    float delayPlaySound = 60f;//tiempo de espera etre sonidos
     private AudioManager audioManager;
     private HealtSystem healtSystem;
 
@@ -21,19 +21,20 @@ public class AmbientSoundController : MonoBehaviour
     {
 
     }
-
+    //metodo para calcular un nuemro random
     public int RandomSoundAmbiente()
     {
         soundPlay = Random.Range(1, 5);
         return soundPlay;
     }
-
+    //corrutina para ejecutar los sonido ambiente de acuerdo al numero random
     IEnumerator PlayAmbientSoundCorrutine()
     {
-        while (true)
+        while (true)//repite la corrutina 
         {
-            yield return new WaitForSeconds(delayPlaySound);
-            RandomSoundAmbiente();
+            yield return new WaitForSeconds(delayPlaySound);//espera el tiempo establecido
+            RandomSoundAmbiente();//traemos un numero random
+            //si el juego aun no ha iniciado o ya perdimos no va a sonar de lo contrario ejecute el sonido de acuerdo al numero random
             if (healtSystem.lose == false)
             {
                 if (soundPlay == 1)
@@ -59,7 +60,7 @@ public class AmbientSoundController : MonoBehaviour
             }
             else
             {
-                audioManager.StopSound();
+                audioManager.StopSound();//detine el audio
             }
         }
     }
