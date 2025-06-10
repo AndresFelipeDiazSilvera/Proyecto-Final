@@ -34,9 +34,10 @@ public class AudioManager : MonoBehaviour
             audioSource = GetComponent<AudioSource>();
         }
     }
-    private void Start() {
+    private void Start()
+    {
         string nombreEscena = SceneManager.GetActiveScene().name;
-        if (nombreEscena=="UImenu")
+        if (nombreEscena == "UImenu")
         {
             MenuPlay();
         }
@@ -79,6 +80,12 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = horrorPianoMusic;
         audioSource.loop = true;
         audioSource.Play();
+    }
+
+    //metodo para no reproducir 
+    public void StopSound()
+    {
+        audioSource.Stop();
     }
 }
 

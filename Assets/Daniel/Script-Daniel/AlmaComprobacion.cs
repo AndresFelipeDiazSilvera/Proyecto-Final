@@ -16,7 +16,7 @@ public class AlmaComprobacion : MonoBehaviour
     {
 
     }
-
+    //activar alma por oleadas
     public void EnableAlma()
     {
         if (spanwManager.wave==2)

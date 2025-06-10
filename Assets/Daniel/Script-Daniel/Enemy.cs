@@ -64,15 +64,12 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         pointLife -= damage;
-        //Debug.Log("impacto en enemigo. Vida restante: " + pointLife);
     }
     //metodo para que ataque el obgetivo 
     public void AttackTarget()
     {
-        Debug.Log("Entro al metodo de atacar");
         if (target != null && playerHealt != null && !isAttacking)
         {
-            Debug.Log("esta atacando");
             audioManager.AttackPlaySound();
             isAttacking = true;
             StartCoroutine(Attack());
@@ -84,11 +81,9 @@ public class Enemy : MonoBehaviour
         //si coliciona con el palyer ataque
         if (collision.gameObject.CompareTag("Player"))
         {
-            //Debug.Log("el enemigo choco con el player");
             if (!isAttacking)
             {
-                //Debug.Log("El enemigo puede atacar al jugador (desde OnCollisionEnter).");
-                AttackTarget(); // Llama al método de ataque
+                AttackTarget(); // Llama al metodo de ataque
             }
         }
     }
@@ -110,8 +105,6 @@ public class Enemy : MonoBehaviour
         isAttacking = false;
         agent.isStopped = false;
         animator.SetBool("isAttacking", false);
-
-        Debug.Log("Ataque del enemigo terminado. isAttacking = false.");
     }
     //metodo para manejar la muerte de los enemigos 
     void Die()
@@ -120,7 +113,6 @@ public class Enemy : MonoBehaviour
         {
             audioManager.DeadPlaySound();
         }
-        //Debug.Log(gameObject.name + " ha muerto.");
         if (spawnManager != null)
         {
             spawnManager.EnemyDied(gameObject); // Llama a una nueva funcion en el SpawnManager
