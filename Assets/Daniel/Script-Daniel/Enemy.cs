@@ -132,7 +132,6 @@ public class Enemy : MonoBehaviour
         // Activar animación de muerte
         animator.SetBool("isDeath",true);  // usa SetTrigger en lugar de SetBool
         agent.isStopped = true;
-
         // Sonido de muerte
         if (audioManager != null)
         {
@@ -140,7 +139,7 @@ public class Enemy : MonoBehaviour
         }
 
         // Esperar a que la animación termine
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.8f);
 
         // Notificar al spawnManager (si existe)
         if (spawnManager != null)

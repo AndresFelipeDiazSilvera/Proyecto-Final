@@ -11,6 +11,9 @@ public class HealtSystem : MonoBehaviour
     [SerializeField] GameObject gameOver;
     [SerializeField] GameObject player;
     [SerializeField] GameObject buttonRestart;
+    [SerializeField] GameObject lifeBarDisable;
+    [SerializeField] GameObject pausaButtonDisable;
+    [SerializeField] GameObject almasBarDisable;
     private VideoPlayer video;
     public bool lose = false;
 
@@ -52,6 +55,9 @@ public class HealtSystem : MonoBehaviour
         if (healt <= 0)
         {
             lose = true;
+            lifeBarDisable.SetActive(false);
+            pausaButtonDisable.SetActive(false);
+            almasBarDisable.SetActive(false);
             gameOver.SetActive(true);
             video.Play();
             Time.timeScale = 0;
