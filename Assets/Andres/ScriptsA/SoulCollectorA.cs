@@ -75,7 +75,6 @@ public class SoulCollectorA : MonoBehaviour
             audioManager.AlmaPlay();
             almaMasCercana.SetActive(false);
             AlmasAlmacenadas.Add(almaMasCercana);
-            almaBar.AumentarBarra();
             alma = true;
         }
 
