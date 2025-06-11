@@ -1,33 +1,36 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AlmaBar : MonoBehaviour
 {
     [SerializeField] Slider almaBar;
-    public int alams;
+    public int almas;
     private SoulCollectorA soulCollector;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         soulCollector = FindAnyObjectByType<SoulCollectorA>();
+        if (soulCollector == null)
+        {
+            Debug.Log("soulcolletor nulo");
+        }
         if (almaBar != null)
         {
-            almaBar.maxValue = 2; // Establece el valor maximo de la barra
+            almaBar.maxValue = 3; // Establece el valor maximo de la barra
             almaBar.value = 0;   // Inicializa la barra bacia
         }
     }
 
     private void Update()
     {
-        
+
     }
 
     public void AumentarBarra()
     {
-        for (int i = 0; i < soulCollector.AlmasAlmacenadas.Count; i++)
-        {
-            alams = i;
-            almaBar.value = alams;
-        }
+        Debug.Log("almas:" + soulCollector.AlmasAlmacenadas.Count);
+        almas = soulCollector.AlmasAlmacenadas.Count;
+        almaBar.value = almas;
     }
 }
