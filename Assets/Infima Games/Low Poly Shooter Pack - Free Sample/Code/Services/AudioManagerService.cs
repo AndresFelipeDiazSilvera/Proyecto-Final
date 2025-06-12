@@ -19,7 +19,7 @@ namespace InfimaGames.LowPolyShooterPack
         private void Start()
         {
             // Solo intenta encontrar el Player y HealtSystem si estamos en la escena "Demo"
-            if (SceneManager.GetActiveScene().name == "Demo" || SceneManager.GetActiveScene().name == "DanielPruebas")
+            if (SceneManager.GetActiveScene().name == "Demo" || SceneManager.GetActiveScene().name == "DanielPruebas" || SceneManager.GetActiveScene().name == "EscenaJefe")
             {
                 InitializeHealtSystem();
             }
@@ -110,7 +110,7 @@ namespace InfimaGames.LowPolyShooterPack
             if (clip == null)
                 return;
                 
-            if (healtSystem == null && SceneManager.GetActiveScene().name == "Demo" || SceneManager.GetActiveScene().name == "DanielPruebas")
+            if (healtSystem == null && SceneManager.GetActiveScene().name == "Demo" || SceneManager.GetActiveScene().name == "DanielPruebas" || SceneManager.GetActiveScene().name == "EscenaJefe")
             {
                 InitializeHealtSystem();
             }
