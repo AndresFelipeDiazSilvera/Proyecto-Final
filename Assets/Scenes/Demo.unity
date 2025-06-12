@@ -487,11 +487,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2353487703772632346, guid: 0a1587b17d3f5a84585abdb350612d06,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3040086516175302897, guid: 0a1587b17d3f5a84585abdb350612d06,
         type: 3}
       propertyPath: m_Pivot.x
@@ -591,16 +586,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3128867581321299026, guid: 0a1587b17d3f5a84585abdb350612d06,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3344986689017925856, guid: 0a1587b17d3f5a84585abdb350612d06,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7292971385029329510, guid: 0a1587b17d3f5a84585abdb350612d06,
         type: 3}
@@ -1027,24 +1012,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8140629531545689510, guid: fbf92739b4c2eee46b913ba302433c42,
-        type: 3}
-      propertyPath: m_Layer
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 8140629531545689510, guid: fbf92739b4c2eee46b913ba302433c42,
-        type: 3}
-      propertyPath: m_TagString
-      value: Exit
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8140629531545689510, guid: fbf92739b4c2eee46b913ba302433c42,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1425354838}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf92739b4c2eee46b913ba302433c42, type: 3}
 --- !u!1 &1162266280 stripped
 GameObject:
@@ -1351,27 +1322,6 @@ MonoBehaviour:
   buttonText: {fileID: 0}
   pauseButton: {fileID: 0}
   slotButtons: []
---- !u!1 &1425354836 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8140629531545689510, guid: fbf92739b4c2eee46b913ba302433c42,
-    type: 3}
-  m_PrefabInstance: {fileID: 1108481240}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1425354838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425354836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 261deb380c2bd07459f1f13a2102b747, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactMessage: {fileID: 0}
-  soulIncomplete: {fileID: 0}
-  timeDelayMessage: 3
 --- !u!1 &1681700541
 GameObject:
   m_ObjectHideFlags: 0
