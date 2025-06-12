@@ -3,8 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class LoadMenu : MonoBehaviour
 {
-public void PrincipalMenu()
-{
-SceneManager.LoadScene("UImenu");
-}
+    //carga el menu
+    public void PrincipalMenu()
+    {
+        SceneManager.LoadScene("UImenu");
+    }
 }

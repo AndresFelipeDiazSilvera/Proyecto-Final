@@ -11,8 +11,11 @@ public class HealtSystem : MonoBehaviour
     [SerializeField] GameObject gameOver;
     [SerializeField] GameObject player;
     [SerializeField] GameObject buttonRestart;
+    [SerializeField] GameObject lifeBarDisable;
+    [SerializeField] GameObject pausaButtonDisable;
+    [SerializeField] GameObject almasBarDisable;
     private VideoPlayer video;
-    public bool lose=false;
+    public bool lose = false;
 
     void Awake()
     {
@@ -35,21 +38,26 @@ public class HealtSystem : MonoBehaviour
     {
 
     }
-
+    //metodo para resivir daño 
     public void TakeDamage(int damege)
     {
-        Debug.Log("EL JUGADOR TOMO DAÑO");
         playerHealth -= damege;
         audioSource.PlayOneShot(damageSound);
         if (lifeBar != null)
         {
             lifeBar.value = playerHealth;
-            Debug.Log("Vida actual del jugador: " + playerHealth);
-            Debug.Log("Valor del Slider: " + lifeBar.value);
         }
-        if (playerHealth <= 0)
+        PlayerDie(playerHealth);
+    }
+    //metodo para manejar la muerte
+    public void PlayerDie(int healt)
+    {
+        if (healt <= 0)
         {
             lose = true;
+            lifeBarDisable.SetActive(false);
+            pausaButtonDisable.SetActive(false);
+            almasBarDisable.SetActive(false);
             gameOver.SetActive(true);
             video.Play();
             Time.timeScale = 0;
