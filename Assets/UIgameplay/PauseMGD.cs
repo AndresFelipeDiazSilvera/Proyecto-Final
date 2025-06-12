@@ -10,37 +10,18 @@ public class PauseMGD : MonoBehaviour
 
     public Button[] slotButtons;
 
-    private bool isPaused = false;
+    public bool isPaused = false;
 
-    private void Start()
+    public void Reaunadar()
     {
-        pauseButton.onClick.AddListener(TogglePause);
-        UpdateState();
+        Time.timeScale = 1;
+        isPaused = false;
     }
-
-    public void TogglePause()
+    public void Pause()
     {
-        isPaused = !isPaused;
-        UpdateState();
+        Time.timeScale = 0;
+        Debug.Log("Juego pausado: " + (Time.timeScale == 0));
+        isPaused = true;
     }
-
-    private void UpdateState()
-    {
-        // Control del tiempo del juego
-        Time.timeScale = isPaused ? 0f : 1f;
-
-        // Cambiar imagen del botón
-        if (pauseButtonImage != null)
-        {
-            pauseButtonImage.sprite = isPaused ? playSprite : pauseSprite;
-        }
-
-        // Activar/desactivar los botones de slot
-        foreach (var button in slotButtons)
-        {
-            button.interactable = !isPaused;
-        }
-
-        Debug.Log(isPaused ? "Juego en pausa" : "Juego reanudado");
-    }
+    
 }
