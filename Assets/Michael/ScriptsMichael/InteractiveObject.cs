@@ -26,9 +26,8 @@ public class InteractiveObject : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             interactMessage.SetActive(false);
         }
-        else
+        else 
         {
-            
             StartCoroutine(AlmasInsuficientes());
         }
     }
