@@ -613,6 +613,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261deb380c2bd07459f1f13a2102b747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactMessage: {fileID: 0}
+  soulIncomplete: {fileID: 0}
+  timeDelayMessage: 3
 --- !u!65 &486302928
 BoxCollider:
   m_ObjectHideFlags: 0
