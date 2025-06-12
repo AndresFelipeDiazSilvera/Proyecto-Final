@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Selected : MonoBehaviour
@@ -6,6 +7,8 @@ public class Selected : MonoBehaviour
     public float distance = 1f;
     public GameObject soulDetected;
     public GameObject interactDetected;
+    public GameObject ExitDetected;
+    public float timeDelayMessage = 3f;
 
     void Start()
     {
@@ -54,6 +57,29 @@ public class Selected : MonoBehaviour
         else
         {
             interactDetected.SetActive(false);
+        }
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distance))
+        {
+
+            if (hit.collider.tag == "Exit")
+            {
+                StartCoroutine(ExitMessage());
+                
+                //ExitDetected.SetActive(true);
+                //if (Input.GetKeyDown(KeyCode.E))
+                //{
+                //    hit.collider.transform.GetComponent<InteractiveObject>().ActiveObject();
+                //    ExitDetected.SetActive(false);
+                //}
+            }
+        }
+        
+        IEnumerator ExitMessage()
+        {
+            ExitDetected.SetActive(true);
+            yield return new WaitForSeconds(timeDelayMessage);
+            ExitDetected.SetActive(false);
         }
     } 
 }

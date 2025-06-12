@@ -20,6 +20,7 @@ TagManager:
   - Bullet
   - Enemy
   - Interactive
+  - Exit
   layers:
   - Default
   - TransparentFX
