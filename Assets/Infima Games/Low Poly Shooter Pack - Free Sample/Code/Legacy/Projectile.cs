@@ -4,7 +4,7 @@ using System.Collections;
 using InfimaGames.LowPolyShooterPack;
 using Random = UnityEngine.Random;
 
-public class Projectile : MonoBehaviour {
+public partial class Projectile : MonoBehaviour {
 
 	[Range(5, 100)]
 	[Tooltip("After how long time should the bullet prefab be destroyed?")]
