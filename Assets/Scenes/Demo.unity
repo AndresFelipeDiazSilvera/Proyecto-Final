@@ -912,12 +912,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1868078826013435757, guid: b1b5e6dc92e46994392a892c26bbc88f,
+    - target: {fileID: 3060795899711988047, guid: b1b5e6dc92e46994392a892c26bbc88f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1380893755}
-    - target: {fileID: 3060795899711988047, guid: b1b5e6dc92e46994392a892c26bbc88f,
+      objectReference: {fileID: 1380893754}
+    - target: {fileID: 3834952259233283939, guid: b1b5e6dc92e46994392a892c26bbc88f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1096,7 +1096,6 @@ GameObject:
   - component: {fileID: 1380893752}
   - component: {fileID: 1380893751}
   - component: {fileID: 1380893754}
-  - component: {fileID: 1380893755}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1188,21 +1187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1849a6a8d1b0e8469d86ec7c50e4604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1380893755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380893750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 208e0cf1d33730d49b6d87a4ad35d5a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonText: {fileID: 0}
-  pauseButton: {fileID: 0}
-  slotButtons: []
 --- !u!1 &1400215845 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3239980349641342702, guid: 0a1587b17d3f5a84585abdb350612d06,
