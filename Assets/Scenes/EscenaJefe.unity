@@ -436,6 +436,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 56991737}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &121381873 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 117306805181679027, guid: 90458445259948e4fa15c4c8b4a4a773,
+    type: 3}
+  m_PrefabInstance: {fileID: 949365457}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &121580274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -844,8 +850,8 @@ MonoBehaviour:
   proyectil: {fileID: 8423007026108582329, guid: be23d9d783485c44584a7ebf2fb315ff,
     type: 3}
   puntoDisparo: {fileID: 1447929029}
-  jugador: {fileID: 1487333154}
-  velocidadProyectil: 10
+  jugador: {fileID: 121381873}
+  velocidadProyectil: 25
   tiempoEntreDisparos: 2
 --- !u!1001 &480057240
 PrefabInstance:
@@ -3636,12 +3642,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6762040267092837497, guid: e4ab387b3201c18499de07857bf3e99e,
     type: 3}
   m_PrefabInstance: {fileID: 1476974411}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1487333154 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5953311709827258608, guid: 90458445259948e4fa15c4c8b4a4a773,
-    type: 3}
-  m_PrefabInstance: {fileID: 949365457}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1498876683
 PrefabInstance:

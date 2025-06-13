@@ -272,6 +272,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 630238978765713166, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956742743658540964, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.918
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136345039285001178, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136345039285001178, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.26
+      objectReference: {fileID: 0}
     - target: {fileID: 5626439075804993397, guid: d29112d822c576947820ff385bd41e81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -327,8 +347,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alma
       objectReference: {fileID: 0}
+    - target: {fileID: 8462574750336649564, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864423838022500520, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.244
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864423838022500520, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.844
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864423838022500520, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.89
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3358830977188765884, guid: d29112d822c576947820ff385bd41e81, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d29112d822c576947820ff385bd41e81, type: 3}
@@ -473,6 +514,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpanwManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3026083883147674158, guid: 09ad6c66ba54e0a4097f2ed9e040f509,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -597,6 +643,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas Interact
       objectReference: {fileID: 0}
+    - target: {fileID: 7292971385029329510, guid: 0a1587b17d3f5a84585abdb350612d06,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -632,6 +683,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioManger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942993877800207321, guid: 6a7f395becafa484883e723186b1abf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8779582490700253266, guid: 6a7f395becafa484883e723186b1abf4,
         type: 3}
@@ -706,6 +762,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056911554063947085, guid: 90458445259948e4fa15c4c8b4a4a773,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5081518825264245507, guid: 90458445259948e4fa15c4c8b4a4a773,
         type: 3}
@@ -842,6 +903,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Exterior
+      objectReference: {fileID: 0}
+    - target: {fileID: 236356549213850682, guid: fbf92739b4c2eee46b913ba302433c42,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4335904869106808088, guid: fbf92739b4c2eee46b913ba302433c42,
         type: 3}
@@ -1056,6 +1122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UIGameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879803451252882480, guid: b1b5e6dc92e46994392a892c26bbc88f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8667955278337419463, guid: b1b5e6dc92e46994392a892c26bbc88f,
         type: 3}
