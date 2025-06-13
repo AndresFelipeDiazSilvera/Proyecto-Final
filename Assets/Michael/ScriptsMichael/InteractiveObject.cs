@@ -9,6 +9,7 @@ public class InteractiveObject : MonoBehaviour
     private SpanwManager enemiesWave;
     public GameObject interactMessage;
     public GameObject soulIncomplete;
+    public GameObject waveMessage;
     public float timeDelayMessage = 3f;
 
 
@@ -26,7 +27,11 @@ public class InteractiveObject : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             interactMessage.SetActive(false);
         }
-        else 
+        else if (enemiesWave.enemiesPerWave > 0)
+        {
+            StartCoroutine(WaveIncomplete());
+        }
+        else
         {
             StartCoroutine(AlmasInsuficientes());
         }
@@ -37,5 +42,12 @@ public class InteractiveObject : MonoBehaviour
         soulIncomplete.SetActive(true);
         yield return new WaitForSeconds(timeDelayMessage);
         soulIncomplete.SetActive(false);
+    }
+
+    IEnumerator WaveIncomplete()
+    {
+        waveMessage.SetActive(true);
+        yield return new WaitForSeconds(timeDelayMessage);
+        waveMessage.SetActive(false);
     }
 }

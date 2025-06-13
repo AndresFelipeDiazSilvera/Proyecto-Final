@@ -382,6 +382,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2792518025236343292, guid: cea877bfdf1ce894498477421ad904f3,
         type: 3}
+      propertyPath: waveMessage
+      value: 
+      objectReference: {fileID: 1400215845}
+    - target: {fileID: 2792518025236343292, guid: cea877bfdf1ce894498477421ad904f3,
+        type: 3}
       propertyPath: soulIncomplete
       value: 
       objectReference: {fileID: 456088883}
@@ -736,7 +741,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pausaButtonDisable
       value: 
-      objectReference: {fileID: 1756779826}
+      objectReference: {fileID: 0}
     - target: {fileID: 5953311709827258608, guid: 90458445259948e4fa15c4c8b4a4a773,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1198,6 +1203,12 @@ MonoBehaviour:
   buttonText: {fileID: 0}
   pauseButton: {fileID: 0}
   slotButtons: []
+--- !u!1 &1400215845 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3239980349641342702, guid: 0a1587b17d3f5a84585abdb350612d06,
+    type: 3}
+  m_PrefabInstance: {fileID: 456088882}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1681700541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,12 +1330,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &1756779826 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8845123432740951074, guid: b1b5e6dc92e46994392a892c26bbc88f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1198939277}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1881923220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3056911554063947085, guid: 90458445259948e4fa15c4c8b4a4a773,
