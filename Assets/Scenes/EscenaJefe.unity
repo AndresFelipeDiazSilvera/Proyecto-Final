@@ -817,12 +817,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &253395949 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8845123432740951074, guid: b1b5e6dc92e46994392a892c26bbc88f,
-    type: 3}
-  m_PrefabInstance: {fileID: 253395944}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &253395950 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5768428507591125895, guid: b1b5e6dc92e46994392a892c26bbc88f,
@@ -849,6 +843,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiempoVida: 5
   "da\xF1o": 10
+  projectile: {fileID: 1215823567122696820, guid: 9b59755154f5e8546b011437d25c75f2,
+    type: 3}
 --- !u!114 &281814840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,7 +857,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a6542fe937e2e45be2564916675108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  proyectil: {fileID: 0}
+  proyectil: {fileID: 1215823567122696820, guid: 9b59755154f5e8546b011437d25c75f2,
+    type: 3}
   puntoDisparo: {fileID: 0}
   jugador: {fileID: 1487333154}
   velocidadProyectil: 10
@@ -1797,7 +1794,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pausaButtonDisable
       value: 
-      objectReference: {fileID: 253395949}
+      objectReference: {fileID: 0}
     - target: {fileID: 5953311709827258608, guid: 90458445259948e4fa15c4c8b4a4a773,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3206,6 +3203,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 7204ce8375bbb664b89cc51b7db49c22,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6386480451222621022, guid: 7204ce8375bbb664b89cc51b7db49c22,
         type: 3}

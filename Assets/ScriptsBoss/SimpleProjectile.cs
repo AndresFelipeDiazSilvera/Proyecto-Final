@@ -4,11 +4,12 @@ public class SimpleProjectile : MonoBehaviour
 {
     public float tiempoVida = 5f; // Segundos antes de desaparecer
     public float daño = 10f; // Daño que hace al jugador
+    public GameObject projectile;
     
     void Start()
     {
         // Se destruye automáticamente después del tiempo especificado
-        Destroy(gameObject, tiempoVida);
+        Destroy(projectile, tiempoVida);
     }
     
     void OnTriggerEnter(Collider other)
@@ -20,7 +21,7 @@ public class SimpleProjectile : MonoBehaviour
             Debug.Log("¡El proyectil golpeó al jugador!");
             
             // Destruye el proyectil
-            Destroy(gameObject);
+            Destroy(projectile);
         }
     }
 }
