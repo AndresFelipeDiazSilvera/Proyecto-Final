@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bb0a3d4e-d064-4208-89fb-869bf7594f1b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Proyecto-Final/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proyecto-Final/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Infima Games/Low Poly Shooter Pack - Free Sample/Code/Services/AudioManagerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Infima Games/Low Poly Shooter Pack - Free Sample/Code/Services/AudioManagerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Infima Games/Low Poly Shooter Pack - Free Sample/Code/Legacy/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Infima Games/Low Poly Shooter Pack - Free Sample/Code/Legacy/Projectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EscenaJefe.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EscenaJefe.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/ScriptsBoss/SimpleProjectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@d680fce5716f/Editor/BuildProcessors/URPPreprocessBuild.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -27,20 +29,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Andres",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Andres&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../../Build 2 ANIMARUN\Proyecto Final.exe" />
@@ -113,6 +115,9 @@
       <workItem from="1749517867163" duration="24000" />
       <workItem from="1749518961851" duration="67000" />
       <workItem from="1749749894849" duration="118000" />
+      <workItem from="1749765152538" duration="17852000" />
+      <workItem from="1749785651535" duration="189000" />
+      <workItem from="1749786296836" duration="2258000" />
     </task>
     <servers />
   </component>
