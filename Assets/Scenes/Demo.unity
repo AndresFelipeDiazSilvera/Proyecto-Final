@@ -272,6 +272,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 630238978765713166, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956742743658540964, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.918
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136345039285001178, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136345039285001178, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.26
+      objectReference: {fileID: 0}
     - target: {fileID: 5626439075804993397, guid: d29112d822c576947820ff385bd41e81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -332,8 +352,24 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8864423838022500520, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.244
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864423838022500520, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.844
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864423838022500520, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.89
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3358830977188765884, guid: d29112d822c576947820ff385bd41e81, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d29112d822c576947820ff385bd41e81, type: 3}
