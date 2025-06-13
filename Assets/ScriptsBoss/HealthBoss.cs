@@ -1,23 +1,32 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBoss : MonoBehaviour
 {
     public int live = 750;
+    public int currentHealth;
+    public Slider lifeBoss;
 
-    public void TakeDamage(int damage)
-    {
-        live -= damage;
-        Debug.Log("Vida Actual Moloch" + live);
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        currentHealth = live;
+        lifeBoss.maxValue = live;
+        lifeBoss.value = currentHealth;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int damage)
     {
-        
+        currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, live);
+        lifeBoss.value = currentHealth;
+        Debug.Log("VIDE RESTANTE BOSS"+live);
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    // Update is called once per frame
+    void Die()
+    {
+        Destroy(gameObject); // o animación de muerte
     }
 }
