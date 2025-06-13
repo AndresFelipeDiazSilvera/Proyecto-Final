@@ -22,16 +22,18 @@ public class InteractiveObject : MonoBehaviour
 
     public void ActiveObject()
     {
-        if (soulCollector.AlmasAlmacenadas.Count >= 2 && enemiesWave.enemiesPerWave == 0)
+        Debug.Log("enemigos per wave"+enemiesWave.enemiesPerWave);
+        if (soulCollector.AlmasAlmacenadas.Count >= 2 && enemiesWave.EnemysEnable() == 0)
         {
+            Debug.Log("cargar scena");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             interactMessage.SetActive(false);
         }
-        else if (enemiesWave.enemiesPerWave > 0)
+        else if (enemiesWave.enemiesPerWave > 0 && enemiesWave.EnemysEnable() > 0)
         {
             StartCoroutine(WaveIncomplete());
         }
-        else
+        else if (soulCollector.AlmasAlmacenadas.Count < 2 && enemiesWave.EnemysEnable() == 0)
         {
             StartCoroutine(AlmasInsuficientes());
         }
