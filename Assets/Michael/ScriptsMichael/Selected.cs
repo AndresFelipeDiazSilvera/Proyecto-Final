@@ -65,13 +65,6 @@ public class Selected : MonoBehaviour
             if (hit.collider.tag == "Exit")
             {
                 StartCoroutine(ExitMessage());
-                
-                //ExitDetected.SetActive(true);
-                //if (Input.GetKeyDown(KeyCode.E))
-                //{
-                //    hit.collider.transform.GetComponent<InteractiveObject>().ActiveObject();
-                //    ExitDetected.SetActive(false);
-                //}
             }
         }
         

@@ -137,11 +137,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb54a0068e5cc3b43b2f8cb157274b39,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -5106710902031489954}
+      addedObject: {fileID: -7798545062044360652}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb54a0068e5cc3b43b2f8cb157274b39,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -7798545062044360652}
+      addedObject: {fileID: 5384349279673330385}
   m_SourcePrefab: {fileID: 100100000, guid: fb54a0068e5cc3b43b2f8cb157274b39, type: 3}
 --- !u!1 &4466797589270940119 stripped
 GameObject:
@@ -239,7 +239,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &-5106710902031489954
+--- !u!114 &-7798545062044360652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466797589270940119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c24cea3bdbf7f49a58efd45e06b0b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointLife: 100
+  poitDamage: 5
+  attackDuration: 2
+--- !u!54 &5384349279673330385
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,25 +274,10 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-7798545062044360652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4466797589270940119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24c24cea3bdbf7f49a58efd45e06b0b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointLife: 100
-  poitDamage: 5
-  attackDuration: 2
