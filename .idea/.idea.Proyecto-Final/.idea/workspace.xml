@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="bb0a3d4e-d064-4208-89fb-869bf7594f1b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Proyecto-Final/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proyecto-Final/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Infima Games/Low Poly Shooter Pack - Free Sample/Code/Legacy/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Infima Games/Low Poly Shooter Pack - Free Sample/Code/Legacy/Projectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scary_Evil/Prefab/projectile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scary_Evil/Prefab/projectile.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/EscenaJefe.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EscenaJefe.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptsBoss/SimpleBossShooter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptsBoss/SimpleBossShooter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptsBoss/SimpleProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptsBoss/SimpleProjectile.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +121,8 @@
       <workItem from="1749765152538" duration="17852000" />
       <workItem from="1749785651535" duration="189000" />
       <workItem from="1749786296836" duration="2258000" />
+      <workItem from="1749841509386" duration="214000" />
+      <workItem from="1749841756486" duration="1210000" />
     </task>
     <servers />
   </component>

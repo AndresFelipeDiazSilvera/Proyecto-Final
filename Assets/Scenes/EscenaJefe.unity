@@ -829,22 +829,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1378140094}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &281814839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281814838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48a8bd6e7928a9345b1e072a2a020454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tiempoVida: 5
-  "da\xF1o": 10
-  projectile: {fileID: 1215823567122696820, guid: 9b59755154f5e8546b011437d25c75f2,
-    type: 3}
 --- !u!114 &281814840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,9 +841,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a6542fe937e2e45be2564916675108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  proyectil: {fileID: 1215823567122696820, guid: 9b59755154f5e8546b011437d25c75f2,
+  proyectil: {fileID: 8423007026108582329, guid: be23d9d783485c44584a7ebf2fb315ff,
     type: 3}
-  puntoDisparo: {fileID: 0}
+  puntoDisparo: {fileID: 1447929029}
   jugador: {fileID: 1487333154}
   velocidadProyectil: 10
   tiempoEntreDisparos: 2
@@ -3291,17 +3275,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7204ce8375bbb664b89cc51b7db49c22,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1447929029}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7204ce8375bbb664b89cc51b7db49c22,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 281814840}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7204ce8375bbb664b89cc51b7db49c22,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 281814839}
   m_SourcePrefab: {fileID: 100100000, guid: 7204ce8375bbb664b89cc51b7db49c22, type: 3}
+--- !u!4 &1378140095 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7204ce8375bbb664b89cc51b7db49c22,
+    type: 3}
+  m_PrefabInstance: {fileID: 1378140094}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1398797838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3480,6 +3470,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1415680122}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1447929028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1447929029}
+  m_Layer: 0
+  m_Name: PuntoDisparo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1447929029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447929028}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.194, y: 1.35, z: 0.502}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1378140095}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1476974411
 PrefabInstance:
   m_ObjectHideFlags: 0

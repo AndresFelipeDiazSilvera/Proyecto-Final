@@ -38,7 +38,7 @@ public class SimpleBossShooter : MonoBehaviour
         }
     }
     
-    void Disparar()
+    public void Disparar()
     {
         // Usa el punto de disparo o la posición del jefe si no hay punto específico
         Vector3 posicionDisparo = puntoDisparo != null ? puntoDisparo.position : transform.position;
