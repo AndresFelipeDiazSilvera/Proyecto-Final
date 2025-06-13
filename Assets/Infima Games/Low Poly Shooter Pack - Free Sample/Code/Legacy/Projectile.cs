@@ -52,6 +52,19 @@ public partial class Projectile : MonoBehaviour {
             Destroy(gameObject); // Destruir la bala al impactar con un enemigo
             return; // Importante salir del método para evitar otras lógicas de impacto
         }
+        
+        //If bullet collides with "Enemy" tag
+        if (collision.transform.CompareTag("Moloch"))
+        {
+	        HealthBoss moloch = collision.gameObject.GetComponent<HealthBoss>();
+	        if (moloch != null)
+	        {
+		        moloch.TakeDamage(damage);
+		        Debug.Log("Bala Choco con " + moloch.name);
+	        }
+	        Destroy(gameObject); // Destruir la bala al impactar con un enemigo
+	        return; // Importante salir del método para evitar otras lógicas de impacto
+        }
 
 		// //Ignore collision if bullet collides with "Player" tag
 		// if (collision.gameObject.CompareTag("Player")) 

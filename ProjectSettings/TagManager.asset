@@ -21,6 +21,7 @@ TagManager:
   - Enemy
   - Interactive
   - Exit
+  - Moloch
   layers:
   - Default
   - TransparentFX
