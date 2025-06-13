@@ -258,6 +258,12 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &74530931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5544504296531964694, guid: b1b5e6dc92e46994392a892c26bbc88f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1198939277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &77238515 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2353487703772632346, guid: 0a1587b17d3f5a84585abdb350612d06,
@@ -282,6 +288,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -7.918
       objectReference: {fileID: 0}
+    - target: {fileID: 3082103317344303676, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: alma
+      value: 
+      objectReference: {fileID: 1573696535}
+    - target: {fileID: 3082103317344303676, guid: d29112d822c576947820ff385bd41e81,
+        type: 3}
+      propertyPath: alma2
+      value: 
+      objectReference: {fileID: 1425656365}
     - target: {fileID: 5136345039285001178, guid: d29112d822c576947820ff385bd41e81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -802,7 +818,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pausaButtonDisable
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 74530931}
     - target: {fileID: 5953311709827258608, guid: 90458445259948e4fa15c4c8b4a4a773,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1263,6 +1279,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3239980349641342702, guid: 0a1587b17d3f5a84585abdb350612d06,
     type: 3}
   m_PrefabInstance: {fileID: 456088882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1425656365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 630238978765713166, guid: d29112d822c576947820ff385bd41e81,
+    type: 3}
+  m_PrefabInstance: {fileID: 133548297}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1573696535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4310359857578439406, guid: d29112d822c576947820ff385bd41e81,
+    type: 3}
+  m_PrefabInstance: {fileID: 133548297}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1681700541
 GameObject:
