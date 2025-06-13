@@ -8,7 +8,7 @@ public class SimpleBossShooter : MonoBehaviour
     public Transform jugador; // Arrastra aquí tu jugador
     
     [Header("Configuración")]
-    public float velocidadProyectil = 10f;
+    public float velocidadProyectil = 50f;
     public float tiempoEntreDisparos = 2f;
     
     private float proximoDisparo = 0f;
