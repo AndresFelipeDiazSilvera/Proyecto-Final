@@ -3,57 +3,91 @@ using UnityEngine;
 public class SimpleBossShooter : MonoBehaviour
 {
     [Header("Referencias")]
-    public GameObject proyectil; // Arrastra aquí tu prefab de proyectil
-    public Transform puntoDisparo; // Punto desde donde sale el proyectil
-    public Transform jugador; // Arrastra aquí tu jugador
-    
+    public GameObject proyectil;
+    public Transform puntoDisparo;
+    public Transform jugador;
+    public Animator anim; // ← Asegúrate de arrastrar el Animator
+
     [Header("Configuración")]
     public float velocidadProyectil = 50f;
     public float tiempoEntreDisparos = 2f;
-    
+
     private float proximoDisparo = 0f;
-    
+    private bool puedeDisparar = false;
+    private HealthBoss healthBoss;
+
     void Start()
     {
-        // Si no tienes el jugador asignado, lo busca automáticamente
+        healthBoss = GetComponent<HealthBoss>();
         if (jugador == null)
         {
             GameObject player = GameObject.FindWithTag("Player");
             if (player != null)
                 jugador = player.transform;
         }
-    }
-    
-    void Update()
-    {
-        // Solo dispara si tenemos jugador y proyectil
-        if (jugador != null && proyectil != null)
+
+        if (anim != null)
         {
-            // Revisa si es tiempo de disparar
-            if (Time.time >= proximoDisparo)
-            {
-                Disparar();
-                proximoDisparo = Time.time + tiempoEntreDisparos;
-            }
+            anim.SetBool("Aullando", true); // ← Activa animación de aullido
+            Invoke(nameof(ActivarDisparo), 2f); // Espera 2 segundos
+        }
+        else
+        {
+            puedeDisparar = true;
         }
     }
-    
+
+    void ActivarDisparo()
+    {
+        puedeDisparar = true;
+        if (anim != null)
+        {
+            anim.SetBool("Aullando", false); // ← Termina aullido
+        }
+    }
+
+    void Update()
+    {
+        if (!puedeDisparar || (healthBoss != null && healthBoss.estaMuerto)) return;
+        // Hacer que el boss mire al jugador
+        Vector3 direccion = jugador.position - transform.position;
+        direccion.y = 0; // Mantiene la rotación solo en el eje Y (horizontal)
+        if (direccion != Vector3.zero)
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direccion), Time.deltaTime * 5f);
+
+        if (jugador != null && proyectil != null && Time.time >= proximoDisparo)
+        {
+            Disparar();
+            proximoDisparo = Time.time + tiempoEntreDisparos;
+        }
+    }
+
     public void Disparar()
     {
-        // Usa el punto de disparo o la posición del jefe si no hay punto específico
+        if (anim != null)
+        {
+            anim.SetBool("Disparando", true); // ← Activar disparo
+        }
+
         Vector3 posicionDisparo = puntoDisparo != null ? puntoDisparo.position : transform.position;
-        
-        // Calcula la dirección hacia el jugador
         Vector3 direccion = (jugador.position - posicionDisparo).normalized;
-        
-        // Crea el proyectil
+
         GameObject nuevoProyectil = Instantiate(proyectil, posicionDisparo, Quaternion.identity);
-        
-        // Le da velocidad al proyectil
         Rigidbody rb = nuevoProyectil.GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.linearVelocity = direccion * velocidadProyectil;
+        }
+
+        // Detener animación de disparo después de un corto tiempo
+        Invoke(nameof(DetenerAnimacionDisparo), 0.5f);
+    }
+
+    void DetenerAnimacionDisparo()
+    {
+        if (anim != null)
+        {
+            anim.SetBool("Disparando", false);
         }
     }
 }

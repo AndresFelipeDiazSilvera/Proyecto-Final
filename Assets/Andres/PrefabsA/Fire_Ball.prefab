@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoVida: 5
-  "da\xF1o": 10
+  "da\xF1o": 20
   projectile: {fileID: 8423007026108582329}
 --- !u!54 &3626443884267518252
 Rigidbody:
