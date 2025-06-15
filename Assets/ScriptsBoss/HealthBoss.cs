@@ -68,11 +68,9 @@ public class HealthBoss : MonoBehaviour
             anim.SetBool("Muerto", true); // ← Activar animación de muerte
         }
 
-        // Instanciar el alma justo encima del cuerpo
         if (pruebaAlma != null)
         {
-            Vector3 posicionEfecto = transform.position + Vector3.up * 2f; // Ajusta altura si es necesario
-            Instantiate(pruebaAlma, posicionEfecto, Quaternion.identity);
+            pruebaAlma.SetActive(true);
         }
     }
 }
