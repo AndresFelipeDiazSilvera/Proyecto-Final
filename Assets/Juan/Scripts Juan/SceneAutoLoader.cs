@@ -72,6 +72,15 @@ public class SceneAutoLoader : MonoBehaviour
             frameIndex++;
         }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        int sceneCount = SceneManager.sceneCountInBuildSettings;
+        if (currentIndex >= sceneCount - 1)
+        {
+            SceneManager.LoadScene(0); // Menú principal
+        }
+        else
+        {
+            SceneManager.LoadScene(currentIndex + 1); // Siguiente escena
+        }
     }
 }
