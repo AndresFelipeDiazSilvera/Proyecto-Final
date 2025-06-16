@@ -2150,50 +2150,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
-        type: 3}
-      propertyPath: amenaza
-      value: 
-      objectReference: {fileID: 8300000, guid: 276ac0b08015afc438ebfd893b056645, type: 3}
-    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
-        type: 3}
-      propertyPath: amenaza2
-      value: 
-      objectReference: {fileID: 8300000, guid: e3b848c508f74204482aee154f4d66fd, type: 3}
-    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
-        type: 3}
-      propertyPath: "gru\xF1ido"
-      value: 
-      objectReference: {fileID: 8300000, guid: 94ba7d54b849c8b4895fce9d7f31dc2e, type: 3}
-    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
-        type: 3}
-      propertyPath: sonidoLLamas
-      value: 
-      objectReference: {fileID: 8300000, guid: 6ccc295c7bab18f40b8d9a5c7c543d3a, type: 3}
-    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
-        type: 3}
-      propertyPath: gritoInfernal
-      value: 
-      objectReference: {fileID: 8300000, guid: 65b74fcf0e2da714fb17c93d6ae73882, type: 3}
-    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
-        type: 3}
-      propertyPath: sonidoInquitante
-      value: 
-      objectReference: {fileID: 8300000, guid: 134f10e9f2a1a094695043553f30f97a, type: 3}
-    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
-        type: 3}
-      propertyPath: musicaInquietante
-      value: 
-      objectReference: {fileID: 8300000, guid: 42053ef53b94ef64686f0751ce9875cf, type: 3}
     - target: {fileID: 3942993877800207321, guid: 6a7f395becafa484883e723186b1abf4,
         type: 3}
       propertyPath: m_Name
       value: AudioManger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3942993877800207321, guid: 6a7f395becafa484883e723186b1abf4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8779582490700253266, guid: 6a7f395becafa484883e723186b1abf4,
         type: 3}

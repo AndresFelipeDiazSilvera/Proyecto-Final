@@ -75,6 +75,7 @@ public class SimpleBossShooter : MonoBehaviour
         if (anim != null)
         {
             anim.SetBool("Disparando", true); // ← Activar disparo
+            audioManager.SonidoLlamas();
         }
 
         Vector3 posicionDisparo = puntoDisparo != null ? puntoDisparo.position : transform.position;

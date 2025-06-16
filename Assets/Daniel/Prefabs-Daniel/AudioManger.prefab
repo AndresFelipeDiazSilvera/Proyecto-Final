@@ -148,6 +148,13 @@ MonoBehaviour:
   enemyAttackSound: {fileID: 8300000, guid: fef34bdf4f56d0b41b711878ccf874a9, type: 3}
   enemyDeadSound: {fileID: 8300000, guid: 4d99c72da98896644b89eb0c47165b9c, type: 3}
   almaSound: {fileID: 8300000, guid: 00785ea6634efed448c92edfc998fe61, type: 3}
+  "gru\xF1ido": {fileID: 8300000, guid: 94ba7d54b849c8b4895fce9d7f31dc2e, type: 3}
+  gritoInfernal: {fileID: 8300000, guid: 65b74fcf0e2da714fb17c93d6ae73882, type: 3}
+  sonidoLLamas: {fileID: 8300000, guid: 6ccc295c7bab18f40b8d9a5c7c543d3a, type: 3}
+  amenaza: {fileID: 8300000, guid: 276ac0b08015afc438ebfd893b056645, type: 3}
+  amenaza2: {fileID: 8300000, guid: e3b848c508f74204482aee154f4d66fd, type: 3}
+  sonidoInquitante: {fileID: 8300000, guid: 134f10e9f2a1a094695043553f30f97a, type: 3}
+  musicaInquietante: {fileID: 8300000, guid: 42053ef53b94ef64686f0751ce9875cf, type: 3}
   suspensoAmbiente: {fileID: 8300000, guid: b7f1cfec47f701e46afe83ca0ca08f82, type: 3}
   crunchAmbiente: {fileID: 8300000, guid: 564c3ea908189b146841389d59ffadd0, type: 3}
   suspensoMusicAmbiente: {fileID: 8300000, guid: 891681122ca9c4f459a800b83828d91c,
