@@ -7,6 +7,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip enemyAttackSound;
     [SerializeField] AudioClip enemyDeadSound;
     [SerializeField] AudioClip almaSound;
+    //boss audios
+    [SerializeField] AudioClip gruñido;
+    [SerializeField] AudioClip gritoInfernal;
+    [SerializeField] AudioClip sonidoLLamas;
+    [SerializeField] AudioClip amenaza;
+    [SerializeField] AudioClip amenaza2;
+    [SerializeField] AudioClip sonidoInquitante;
+    [SerializeField] AudioClip musicaInquietante;
     //ambiente
     [SerializeField] AudioClip suspensoAmbiente;
     [SerializeField] AudioClip crunchAmbiente;
@@ -81,7 +89,35 @@ public class AudioManager : MonoBehaviour
         audioSource.loop = true;
         audioSource.Play();
     }
-
+    //metodo para sonidos del boss
+    public void Gruñido()
+    {
+        audioSource.PlayOneShot(gruñido);
+    }
+    public void GritoInfernal()
+    {
+        audioSource.PlayOneShot(gritoInfernal);
+    }
+    public void SonidoLlamas()
+    {
+        audioSource.PlayOneShot(sonidoLLamas);
+    }
+    public void Amenza()
+    {
+        audioSource.PlayOneShot(amenaza);
+    }
+     public void Amenza2()
+    {
+        audioSource.PlayOneShot(amenaza2);
+    }
+    public void SonidoInquietante()
+    {
+        audioSource.PlayOneShot(sonidoInquitante);
+    }
+    public void MusicaInqietante()
+    {
+        audioSource.PlayOneShot(musicaInquietante);
+    }
     //metodo para no reproducir 
     public void StopSound()
     {

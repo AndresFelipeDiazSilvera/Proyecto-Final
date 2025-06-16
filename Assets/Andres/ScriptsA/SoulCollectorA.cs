@@ -11,12 +11,14 @@ public class SoulCollectorA : MonoBehaviour
     private SpanwManager spawnManager;
     private AudioManager audioManager;
     private AlmaBar almaBar;
+    private LoadSceneFinal loadSceneFinal;
 
     void Start()
     {
         spawnManager = FindFirstObjectByType<SpanwManager>(); // Obtener la referencia al SpawnManager
         audioManager = FindAnyObjectByType<AudioManager>(); // obtener la referencia al AudioManager
         almaBar = FindAnyObjectByType<AlmaBar>();
+        loadSceneFinal = FindAnyObjectByType<LoadSceneFinal>();
         if (spawnManager == null)
         {
             Debug.LogError("No se encontró un objeto de tipo SpanwManager en la escena.");
@@ -77,6 +79,7 @@ public class SoulCollectorA : MonoBehaviour
             AlmasAlmacenadas.Add(almaMasCercana);
             almaBar.AumentarBarra();
             alma = true;
+            loadSceneFinal.LoadScene();
         }
 
     }

@@ -7,6 +7,7 @@ public class SimpleBossShooter : MonoBehaviour
     public Transform puntoDisparo;
     public Transform jugador;
     public Animator anim; // ← Asegúrate de arrastrar el Animator
+    public AudioManager audioManager;
 
     [Header("Configuración")]
     public float velocidadProyectil = 50f;
@@ -30,19 +31,26 @@ public class SimpleBossShooter : MonoBehaviour
         {
             anim.SetBool("Aullando", true); // ← Activa animación de aullido
             Invoke(nameof(ActivarDisparo), 2f); // Espera 2 segundos
+            audioManager.StopSound();
+            Invoke(nameof(ReproducirGruñido), 0.2f);
         }
         else
         {
             puedeDisparar = true;
         }
     }
-
+    void ReproducirGruñido()
+    {
+        audioManager.Gruñido();
+    }
     void ActivarDisparo()
     {
         puedeDisparar = true;
         if (anim != null)
         {
             anim.SetBool("Aullando", false); // ← Termina aullido
+            audioManager.StopSound();
+            audioManager.Amenza2();
         }
     }
 

@@ -8,6 +8,7 @@ public class HealthBoss : MonoBehaviour
     public Slider healthSlider;
     public GameObject healthBarCanvas;
     public Camera playerCamera;
+    public AudioManager audioManager;
 
     private Animator anim;
     [HideInInspector]
@@ -17,6 +18,7 @@ public class HealthBoss : MonoBehaviour
     void Start()
     {
         live = maxLife;
+        pruebaAlma.SetActive(false);
         anim = GetComponent<Animator>(); // ← Obtener Animator
 
         if (healthSlider != null)
@@ -55,6 +57,11 @@ public class HealthBoss : MonoBehaviour
         {
             Die();
         }
+        if (live == 1500)
+        {
+            audioManager.StopSound();
+            audioManager.Amenza();
+        }
     }
 
     void Die()
@@ -65,7 +72,10 @@ public class HealthBoss : MonoBehaviour
 
         if (anim != null)
         {
-            anim.SetBool("Muerto", true); // ← Activar animación de muerte
+            anim.SetBool("Muerto", true);
+            // ← Activar animación de muerte
+            audioManager.StopSound();
+            audioManager.GritoInfernal();
         }
 
         if (pruebaAlma != null)

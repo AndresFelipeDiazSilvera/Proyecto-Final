@@ -1045,6 +1045,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIGameplay
       objectReference: {fileID: 0}
+    - target: {fileID: 6879803451252882480, guid: b1b5e6dc92e46994392a892c26bbc88f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8667955278337419463, guid: b1b5e6dc92e46994392a892c26bbc88f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1119,6 +1124,7 @@ MonoBehaviour:
   puntoDisparo: {fileID: 1447929029}
   jugador: {fileID: 121381873}
   anim: {fileID: 1378140099}
+  audioManager: {fileID: 1513024451}
   velocidadProyectil: 10
   tiempoEntreDisparos: 1.5
 --- !u!1001 &480057240
@@ -1233,6 +1239,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292971385029329510, guid: 0a1587b17d3f5a84585abdb350612d06,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1429,7 +1440,7 @@ PrefabInstance:
     - target: {fileID: 2038473808280346774, guid: fcef3d9a56e06e644b2cf647e1356cb3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8006325825105691247, guid: fcef3d9a56e06e644b2cf647e1356cb3,
         type: 3}
@@ -2139,10 +2150,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
+        type: 3}
+      propertyPath: amenaza
+      value: 
+      objectReference: {fileID: 8300000, guid: 276ac0b08015afc438ebfd893b056645, type: 3}
+    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
+        type: 3}
+      propertyPath: amenaza2
+      value: 
+      objectReference: {fileID: 8300000, guid: e3b848c508f74204482aee154f4d66fd, type: 3}
+    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
+        type: 3}
+      propertyPath: "gru\xF1ido"
+      value: 
+      objectReference: {fileID: 8300000, guid: 94ba7d54b849c8b4895fce9d7f31dc2e, type: 3}
+    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
+        type: 3}
+      propertyPath: sonidoLLamas
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ccc295c7bab18f40b8d9a5c7c543d3a, type: 3}
+    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
+        type: 3}
+      propertyPath: gritoInfernal
+      value: 
+      objectReference: {fileID: 8300000, guid: 65b74fcf0e2da714fb17c93d6ae73882, type: 3}
+    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
+        type: 3}
+      propertyPath: sonidoInquitante
+      value: 
+      objectReference: {fileID: 8300000, guid: 134f10e9f2a1a094695043553f30f97a, type: 3}
+    - target: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
+        type: 3}
+      propertyPath: musicaInquietante
+      value: 
+      objectReference: {fileID: 8300000, guid: 42053ef53b94ef64686f0751ce9875cf, type: 3}
     - target: {fileID: 3942993877800207321, guid: 6a7f395becafa484883e723186b1abf4,
         type: 3}
       propertyPath: m_Name
       value: AudioManger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942993877800207321, guid: 6a7f395becafa484883e723186b1abf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8779582490700253266, guid: 6a7f395becafa484883e723186b1abf4,
         type: 3}
@@ -2211,6 +2262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056911554063947085, guid: 90458445259948e4fa15c4c8b4a4a773,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5081518825264245507, guid: 90458445259948e4fa15c4c8b4a4a773,
         type: 3}
@@ -2829,6 +2885,7 @@ GameObject:
   - component: {fileID: 1264478651}
   - component: {fileID: 1264478650}
   - component: {fileID: 1264478649}
+  - component: {fileID: 1264478652}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2908,6 +2965,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1264478652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264478648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cfa4bf14f3fed74396b4ea8b49838bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1280738182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2038473808280346774, guid: fcef3d9a56e06e644b2cf647e1356cb3,
@@ -3680,6 +3749,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7204ce8375bbb664b89cc51b7db49c22,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7204ce8375bbb664b89cc51b7db49c22,
+        type: 3}
       propertyPath: m_TagString
       value: Moloch
       objectReference: {fileID: 0}
@@ -3931,6 +4005,7 @@ MonoBehaviour:
   healthSlider: {fileID: 246071333}
   healthBarCanvas: {fileID: 19111153}
   playerCamera: {fileID: 1591812715}
+  audioManager: {fileID: 1513024451}
   estaMuerto: 0
   pruebaAlma: {fileID: 1280738182}
 --- !u!65 &1378140098
@@ -4422,6 +4497,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1498876683}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1513024451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 723085174964341801, guid: 6a7f395becafa484883e723186b1abf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 930083444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3061c0f5509d32f4db20389509adaa42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1537318489
 PrefabInstance:
   m_ObjectHideFlags: 0

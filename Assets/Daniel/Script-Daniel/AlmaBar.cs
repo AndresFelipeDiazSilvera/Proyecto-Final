@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AlmaBar : MonoBehaviour
@@ -7,6 +8,7 @@ public class AlmaBar : MonoBehaviour
     [SerializeField] Slider almaBar;
     public int almas;
     private SoulCollectorA soulCollector;
+    private GameObject alma;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +21,12 @@ public class AlmaBar : MonoBehaviour
         {
             almaBar.maxValue = 3; // Establece el valor maximo de la barra
             almaBar.value = 0;   // Inicializa la barra bacia
+        }
+        if (SceneManager.GetActiveScene().name == "EscenaJefe")
+        {
+            almaBar.value = 2;
+            soulCollector.AlmasAlmacenadas.Add(alma);
+            soulCollector.AlmasAlmacenadas.Add(alma);
         }
     }
 
