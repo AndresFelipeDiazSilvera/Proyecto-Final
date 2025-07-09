@@ -44,24 +44,25 @@ public class HealthBoss : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        live -= damage;
-        live = Mathf.Clamp(live, 0, maxLife);
-        Debug.Log("Vida Actual Moloch: " + live);
+        if (estaMuerto) return;
+            live -= damage;
+            live = Mathf.Clamp(live, 0, maxLife);
+            Debug.Log("Vida Actual Moloch: " + live);
 
-        if (healthSlider != null)
-        {
-            healthSlider.value = live;
-        }
+            if (healthSlider != null)
+            {
+                healthSlider.value = live;
+            }
 
-        if (live <= 0)
-        {
-            Die();
-        }
-        if (live == 1500)
-        {
-            audioManager.StopSound();
-            audioManager.Amenza();
-        }
+            if (live <= 0)
+            {
+                Die();
+            }
+            if (live == 1500)
+            {
+                audioManager.StopSound();
+                audioManager.Amenza();
+            }
     }
 
     void Die()
@@ -75,9 +76,12 @@ public class HealthBoss : MonoBehaviour
             anim.SetBool("Muerto", true);
             // ← Activar animación de muerte
             audioManager.StopSound();
-            audioManager.GritoInfernal();
-        }
+            if (estaMuerto)
+            {
+                audioManager.GritoInfernal();
+            }
 
+        }
         if (pruebaAlma != null)
         {
             pruebaAlma.SetActive(true);
