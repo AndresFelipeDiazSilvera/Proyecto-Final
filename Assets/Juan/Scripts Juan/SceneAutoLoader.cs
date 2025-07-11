@@ -24,6 +24,9 @@ public class SceneAutoLoader : MonoBehaviour
 
     void Start()
     {
+         //ponesmos el cursor visible y desbloqueado al cargar la escena
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         StartCoroutine(LoadNextSceneAfterDelay());
     }
 
