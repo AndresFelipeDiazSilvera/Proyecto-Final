@@ -1147,7 +1147,7 @@ MonoBehaviour:
   anim: {fileID: 1378140099}
   audioManager: {fileID: 1513024451}
   velocidadProyectil: 10
-  tiempoEntreDisparos: 1.5
+  tiempoEntreDisparos: 1.95
 --- !u!1001 &480057240
 PrefabInstance:
   m_ObjectHideFlags: 0
