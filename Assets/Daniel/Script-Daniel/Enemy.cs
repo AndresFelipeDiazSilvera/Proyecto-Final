@@ -39,19 +39,20 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         // Si hay un objetivo asignado
-        if (target != null)
+        if (target != null && agent != null && agent.enabled && agent.isOnNavMesh && !isAttacking && !isDeath)
         {
             // Mueve al enemigo hacia el objetivo
             agent.SetDestination(target.transform.position);
+
             // Calcula la distancia actual al objetivo
             float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
-            // Si el enemigo está lo suficientemente cerca del objetivo y no está atacando actualmente
-            if (distanceToTarget < agent.stoppingDistance && !isAttacking)
+
+            // Si el enemigo esta lo suficientemente cerca del objetivo y no esta atacando actualmente
+            if (distanceToTarget < agent.stoppingDistance)
             {
                 AttackTarget(); // Inicia el ataque
             }
         }
-
         if (pointLife <= 0)
         {
             Die();
@@ -78,7 +79,7 @@ public class Enemy : MonoBehaviour
             audioManager.AttackPlaySound();
             isAttacking = true;
             StartCoroutine(Attack());
-            
+
         }
     }
     //metodo para manegar las coliciones 
@@ -127,10 +128,10 @@ public class Enemy : MonoBehaviour
     }
     public IEnumerator Death()
     {
-        Debug.Log("El enemigo está muriendo...");
+        Debug.Log("El enemigo esta muriendo...");
 
         // Activar animación de muerte
-        animator.SetBool("isDeath",true);  // usa SetTrigger en lugar de SetBool
+        animator.SetBool("isDeath", true);  // usa SetTrigger en lugar de SetBool
         agent.isStopped = true;
         // Sonido de muerte
         if (audioManager != null)

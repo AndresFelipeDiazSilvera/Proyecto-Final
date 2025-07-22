@@ -1212,6 +1212,7 @@ GameObject:
   - component: {fileID: 2214197472282491477}
   - component: {fileID: 5081518825264245507}
   - component: {fileID: 4469516697708995974}
+  - component: {fileID: 5005808658984850190}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -1726,6 +1727,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 207fb2a2-8add-4ddb-bda7-c1887aeb313a
     m_ActionName: 'Player/Tutorial[/Keyboard/tab]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5005808658984850190}
+        m_TargetAssemblyTypeName: PushEnemies, Assembly-CSharp
+        m_MethodName: StartAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 93df18b8-658b-435a-aa97-597ef15d7099
+    m_ActionName: 'Player/Push[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1794,6 +1811,9 @@ MonoBehaviour:
   gameOver: {fileID: 0}
   player: {fileID: 3056911554063947085}
   buttonRestart: {fileID: 0}
+  lifeBarDisable: {fileID: 0}
+  pausaButtonDisable: {fileID: 0}
+  almasBarDisable: {fileID: 0}
   lose: 0
 --- !u!82 &4469516697708995974
 AudioSource:
@@ -1892,6 +1912,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5005808658984850190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056911554063947085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b920957a9f731e4dbabfb4058a0050c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDuration: 1
+  pushDistance: 3
+  pushTime: 0.2
+  pushRadius: 3
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 131072
+  attackCooldown: 1
 --- !u!1 &3113668103826240129
 GameObject:
   m_ObjectHideFlags: 0
@@ -3475,6 +3515,8 @@ MonoBehaviour:
   distance: 1
   soulDetected: {fileID: 0}
   interactDetected: {fileID: 0}
+  ExitDetected: {fileID: 0}
+  timeDelayMessage: 3
 --- !u!1 &8247860985280212968
 GameObject:
   m_ObjectHideFlags: 0
