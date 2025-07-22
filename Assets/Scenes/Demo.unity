@@ -1751,11 +1751,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3056911554063947085, guid: 90458445259948e4fa15c4c8b4a4a773,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1881923221}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90458445259948e4fa15c4c8b4a4a773, type: 3}
 --- !u!1001 &951903092
 PrefabInstance:
@@ -4286,26 +4282,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 949365457}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1881923221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881923220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b920957a9f731e4dbabfb4058a0050c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDuration: 0
-  pushDistance: 0
-  pushTime: 0
-  pushRadius: 0
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 131072
-  attackCooldown: 0
 --- !u!1001 &1884881935
 PrefabInstance:
   m_ObjectHideFlags: 0
